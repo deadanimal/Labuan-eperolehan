@@ -28,7 +28,7 @@
                 <tr>
                   <td>{{$perancangan->id}}</td>
                   <td>{{$perancangan->tahun_pelan}}</td>
-                  <td><a href="/perancangan/{{$perancangan->id}}/edit">{{$perancangan->tajuk}}</a></td>
+                  <td><a href="/updatepelulus/{{$perancangan->id}}/editpelulus">{{$perancangan->tajuk}}</a></td>
                   <td>{{$perancangan->kategori}}</td>
                   <td>{{$perancangan->status}}</td>
                   @endforeach

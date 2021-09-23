@@ -26,10 +26,13 @@ Route::resource('/kod',kodController::class);
 
 
 
-Route::get('/indexpengesah', [PerancanganController::class,'updatePengesah']);
-Route::get('/updatepengesah/{id}', [PerancanganController::class,'indexpengesah']);
+Route::get('/indexpengesah', [PerancanganController::class,'indexpengesah']);
+Route::get('/editpengesah/{id}', [PerancanganController::class,'editpengesah']);
+Route::post('/updatepengesah', [PerancanganController::class,'updatepengesah']);
+
 Route::get('/indexpelulus',[PerancanganController::class,'indexpelulus']);
-Route::get('/updatepelulus/{id}',[PerancanganController::class,'updatePelulus']);
+Route::get('/editpelulus/{id}',[PerancanganController::class,'editpelulus']);
+Route::post('/updatepelulus/{id}',[PerancanganController::class,'updatepelulus']);
 
 // Route::get('/jadual-minggu', [NotisController::class,'jadual_minggu']);
 

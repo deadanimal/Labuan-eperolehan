@@ -52,13 +52,13 @@
                   <div class="col-md-6 ps-md-2">
                     <label>Tajuk Pelan:</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" style="width:500px;" name="tajuk" value="{{$perancangan->tajuk}}" readonly> 
+                      <input type="text" class="form-control" style="width:500px;" name="tajuk" value="{{$perancangan->tajuk}}" > 
                     </div>
                   </div>
                 </div>
 
                 <label>Perihal Pelan</label>
-                <input type="text" name="perihal" class="form-control" style="width:500px;" value="{{$perancangan->perihal}}" readonly> 
+                <input type="text" name="perihal" class="form-control" style="width:500px;" value="{{$perancangan->perihal}}" > 
 
                 {{-- <div class="container">
                   <div class="row justify-space-between py-2">
@@ -71,7 +71,7 @@
                 </div> --}}
                   
                     <label>Kategori Pelan</label>
-                    <select name="kategori" class="form-control" readonly>
+                    <select name="kategori" class="form-control" >
                       <option hidden>Sila Pilih</option>
                       <option @if ($perancangan->kategori == 'bekalan') selected @endif value="bekalan">Bekalan</option>
                       <option @if ($perancangan->kategori == 'perkhidmatan') selected @endif value="perkhidmatan">Perkhidmatan</option>
@@ -81,7 +81,7 @@
                     
 
                     <label>Kaedah Pelan</label>
-                    <select name="kaedah" class="form-control" readonly>
+                    <select name="kaedah" class="form-control" >
                       
                       <option hidden>Sila Pilih</option>
                       <option @if ($perancangan->kaedah == 'pembelian terus') selected @endif value="pembelian terus">Pembelian Terus</option>
@@ -91,10 +91,10 @@
                     </select>
 
                     <label>Tarikh Jemputan</label>
-                    <input type="date" name="tarikh" class="form-control" value="{{$perancangan->tarikh}}" readonly>
+                    <input type="date" name="tarikh" class="form-control" value="{{$perancangan->tarikh}}" >
 
                     <label>Amaun Anggaran</label>
-                    <input type=text name="amaun" class="form-control" value="{{$perancangan->amaun}}" readonly>
+                    <input type=text name="amaun" class="form-control" value="{{$perancangan->amaun}}" >
 
                 </fieldset>
                 <br><br><br>
@@ -103,14 +103,14 @@
                   <br><br>
 
                   <label>Pegawai Pengesah</label>
-                  <select class="form-control" name="pengesah" readonly>
+                  <select class="form-control" name="pengesah" >
                     <option hidden>Sila Pilih</option>
                     <option>Ali Bin Raz</option>
                   </select>
 
 
                   <label>Pegawai Pelulus</label>
-                  <select class="form-control" name="pelulus" readonly>
+                  <select class="form-control" name="pelulus" >
                     <option hidden>Sila Pilih</option>
                     <option>Ali Bin Raz</option>
                   </select>
@@ -123,7 +123,7 @@
                 <label>Catatan Pelulus:</label>
                 <textarea class="form-control" name="catatan_pelulus" placeholder="Sila Nyatakan Komen Anda"></textarea>
                 
-                <label>Status Perolehan:</label>
+                <label>Tindakan</label>
                 <select name="status" class="form-control">
                   <option hidden>Sila Pilih</option>
                   <option value="Diluluskan">Diluluskan</option>

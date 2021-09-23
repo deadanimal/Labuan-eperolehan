@@ -34,32 +34,31 @@
           <div class="row justify-space-between py-2">
             <div class="col-lg-3 me-auto">
             </div>
-              <form method="POST" action="/updatepengesah/{{$id}}"> 
-             
+              <form method="POST" action="/updatepengesah"> 
                 @csrf
-                @method('PUT')
                 <br>
                 <fieldset>
                   <legend>Butiran Pelan</legend>
                   <br><br>
                 <div class="row">
                   <div class="col-md-3">
+                    <input type="hidden" name="perancangan_id"  value="{{$perancangan->id}}">
                     <label>Tahun Perancangan:</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="readonly" name="tahun_pelan" value="{{$perancangan->tahun_pelan}}" readonly>
+                      <input class="form-control" type="text" name="tahun_pelan" value="{{$perancangan->tahun_pelan}}" >
                     </div>
                   </div>
 
                   <div class="col-md-6 ps-md-2">
                     <label>Tajuk Pelan:</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" style="width:500px;" name="tajuk" value="{{$perancangan->tajuk}}" readonly> 
+                      <input type="text" class="form-control" style="width:500px;" name="tajuk" value="{{$perancangan->tajuk}}" > 
                     </div>
                   </div>
                 </div>
 
                 <label>Perihal Pelan</label>
-                <input type="text" name="perihal" class="form-control" style="width:500px;" value="{{$perancangan->perihal}}" readonly> 
+                <input type="text" name="perihal" class="form-control" style="width:500px;" value="{{$perancangan->perihal}}" > 
 
                 {{-- <div class="container">
                   <div class="row justify-space-between py-2">
@@ -72,7 +71,7 @@
                 </div> --}}
                   
                     <label>Kategori Pelan</label>
-                    <select name="kategori" class="form-control" readonly>
+                    <select name="kategori" class="form-control" >
                       <option hidden>Sila Pilih</option>
                       <option @if ($perancangan->kategori == 'bekalan') selected @endif value="bekalan">Bekalan</option>
                       <option @if ($perancangan->kategori == 'perkhidmatan') selected @endif value="perkhidmatan">Perkhidmatan</option>
@@ -82,7 +81,7 @@
                     
 
                     <label>Kaedah Pelan</label>
-                    <select name="kaedah" class="form-control" readonly>
+                    <select name="kaedah" class="form-control" >
                       
                       <option hidden>Sila Pilih</option>
                       <option @if ($perancangan->kaedah == 'pembelian terus') selected @endif value="pembelian terus">Pembelian Terus</option>
@@ -92,10 +91,10 @@
                     </select>
 
                     <label>Tarikh Jemputan</label>
-                    <input type="date" name="tarikh" class="form-control" value="{{$perancangan->tarikh}}" readonly>
+                    <input type="date" name="tarikh" class="form-control" value="{{$perancangan->tarikh}}" >
 
                     <label>Amaun Anggaran</label>
-                    <input type=text name="amaun" class="form-control" value="{{$perancangan->amaun}}" readonly>
+                    <input type=text name="amaun" class="form-control" value="{{$perancangan->amaun}}" >
 
                 </fieldset>
                 <br><br><br>
@@ -104,14 +103,14 @@
                   <br><br>
 
                   <label>Pegawai Pengesah</label>
-                  <select class="form-control" name="pengesah" readonly>
+                  <select class="form-control" name="pengesah" >
                     <option hidden>Sila Pilih</option>
                     <option>Ali Bin Raz</option>
                   </select>
 
 
                   <label>Pegawai Pelulus</label>
-                  <select class="form-control" name="pelulus" readonly>
+                  <select class="form-control" name="pelulus" >
                     <option hidden>Sila Pilih</option>
                     <option>Ali Bin Raz</option>
                   </select>
@@ -120,6 +119,12 @@
 
                 <label>Catatan Pengesah: </label>
                 <textarea class="form-control" name="catatan_pengesah" placeholder="Sila Nyatakan Komen Anda"></textarea>
+
+                <label>Tindakan</label>
+                <select class="form-control" name="status">
+                  <option value="Semak Semula">Semak Semula</option>
+                  <option value="Menunggu Kelulusan">Disahkan</option>
+                </select>
                 
                   <br><br>
                   {{-- <button type="submit" class="btn btn-primary" style="margin:5px; float:">Hantar</button>  

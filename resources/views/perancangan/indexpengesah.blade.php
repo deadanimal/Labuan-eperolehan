@@ -24,13 +24,13 @@
                   <th>Status</th>
                 </tr>
 
-                @foreach($perancangan as $perancangan)
+                @foreach($perancangan as $perancangans)
                 <tr>
-                  <td>{{$perancangan->id}}</td>
-                  <td>{{$perancangan->tahun_pelan}}</td>
-                  <td><a href="/perancangan/{{$perancangan->id}}/edit">{{$perancangan->tajuk}}</a></td>
-                  <td>{{$perancangan->kategori}}</td>
-                  <td>{{$perancangan->status}}</td>
+                  <td>{{$perancangans->id}}</td>
+                  <td>{{$perancangans->tahun_pelan}}</td>
+                  <td><a href="/editpengesah/{{$perancangans->id}}">{{$perancangans->tajuk}}</a></td>
+                  <td>{{$perancangans->kategori}}</td>
+                  <td>{{$perancangans->status}}</td>
                   @endforeach
               </tr>
 

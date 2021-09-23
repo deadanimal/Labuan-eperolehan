@@ -94,12 +94,15 @@ class PerancanganController extends Controller
             'perancangan' => $perancangan
         ]);
 
+
     }
 
-    public function editPengesah(Perancangan $perancangan)
+    public function editPengesah(Perancangan $perancangan, $id)
     {
+        $perancangan = Perancangan::where('id',$id)->first();
         return view('perancangan.pengesah', ['perancangan'=>$perancangan]); 
     }
+
 
     public function updatePengesah(Request $request, Perancangan $perancangan)
     {
@@ -115,11 +118,10 @@ class PerancanganController extends Controller
         $perancangan->pelulus=$request->pelulus;
         $perancangan->catatan_pengesah=$request->catatan_pengesah;;
         $perancangan->status=$request->status;
+        $perancangan->id=$request->perancangan_id;
 
-        $perancangan->save();
-
-        $url = '/perancangan/'.$perancangan->id;
-        return redirect('/perancangan');
+        $perancangan->update();
+        return redirect('/indexpengesah');
 
     }
 
@@ -136,7 +138,9 @@ class PerancanganController extends Controller
 
     public function editPelulus(Perancangan $perancangan)
     {
+        $perancangan = Perancangan::where('id',$id)->first();
         return view('perancangan.pelulus', ['perancangan'=>$perancangan]); 
+        
     }
 
 
@@ -157,7 +161,7 @@ class PerancanganController extends Controller
 
         $perancangan->save();
 
-        $url = '/perancangan/'.$perancangan->id;
+        $url = '/updatepelulus/'.$perancangan->id;
         return redirect('/perancangan');
 
     }
