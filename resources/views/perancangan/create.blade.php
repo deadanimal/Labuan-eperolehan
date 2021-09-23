@@ -23,8 +23,6 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="../../assets/css/soft-design-system.css?v=1.0.5" rel="stylesheet" />
   </head>
-  
-
 
 <body class="features-sections">
 <a href="/perancangan">Kembali</a>
@@ -76,16 +74,16 @@
                     <select name="kategori" class="form-control">
                       <option hidden>Sila Pilih</option>
                       <option value="bekalan">Bekalan</option>
-                      <option>Perkhidmatan</option>
-                      <option>Kerja</option>
+                      <option value="perkhidmatan">Perkhidmatan</option>
+                      <option value="kerja">Kerja</option>
                     </select> 
 
                     <label>Kaedah Pelan</label>
                     <select name="kaedah" class="form-control">
                       <option hidden>Sila Pilih</option>
-                      <option>Pembelian Terus</option>
-                      <option>Sebutharga</option>
-                      <option>Tender</option>
+                      <option value="pembelian terus">Pembelian Terus</option>
+                      <option value="sebutharga">Sebutharga</option>
+                      <option value="tender">Tender</option>
                     </select>
 
                     <label>Tarikh Jemputan</label>
@@ -105,6 +103,7 @@
                   <select class="form-control" name="pengesah">
                     <option hidden>Sila Pilih</option>
                     <option value="1">Ali Bin Raz</option>
+                    <option value="2">Siti Binti Ahmad</option>
                   </select>
 
 
@@ -112,6 +111,7 @@
                   <select class="form-control" name="pelulus">
                     <option hidden>Sila Pilih</option>
                     <option value="1">Ali Bin Raz</option>
+                    <option value="2">Siti Binti Ahmad</option>
                   </select>
 
                 </fieldset>
@@ -121,7 +121,9 @@
                   <button type="reset"  class="btn btn-primary"  style="margin:5px; float:right">Hapus</button> --}}
 
                   <button class="btn bg-gradient-light mb-0 js-btn-prev" type="button" title="Prev">Kembali</button>
-                  <button class="btn btn-primary" type="submit" title="Send">Hantar</button> 
+                  <button class="btn btn-success" type="submit" name="status" value="draf">Draf</button> 
+                  <button class="btn btn-primary" type="submit" name="status" value="hantar" >Hantar</button> 
+
                 </form>
             
 

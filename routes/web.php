@@ -26,8 +26,10 @@ Route::resource('/kod',kodController::class);
 
 
 
-Route::get('/pelan-pengesah/{id}', [PerancanganController::class,'updatePengesah']);
-Route::get('/pelan-pelulus/{id}',[PerancanganController::class,'updatePelulus']);
+Route::get('/indexpengesah', [PerancanganController::class,'updatePengesah']);
+Route::get('/updatepengesah/{id}', [PerancanganController::class,'indexpengesah']);
+Route::get('/indexpelulus',[PerancanganController::class,'indexpelulus']);
+Route::get('/updatepelulus/{id}',[PerancanganController::class,'updatePelulus']);
 
 // Route::get('/jadual-minggu', [NotisController::class,'jadual_minggu']);
 

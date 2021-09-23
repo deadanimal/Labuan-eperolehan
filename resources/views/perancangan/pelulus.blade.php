@@ -34,7 +34,7 @@
           <div class="row justify-space-between py-2">
             <div class="col-lg-3 me-auto">
             </div>
-              <form method="POST" action="/perancangan/{{$id}}"> 
+              <form method="POST" action="/updatepelulus/{{$id}}"> 
                 @csrf
                 @method('PUT')
                 <br>

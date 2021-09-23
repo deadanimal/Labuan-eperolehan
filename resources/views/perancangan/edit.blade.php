@@ -73,10 +73,9 @@
                     <label>Kategori Pelan</label>
                     <select name="kategori" class="form-control">
                       <option hidden>Sila Pilih</option>
-                      <option @if ($perancangan->kategori == 'bekalan') selected @endif value="bekalan">Bekalan</option>
-                      <option @if ($perancangan->kategori == 'perkhidmatan') selected @endif value="perkhidmatan">Perkhidmatan</option>
-                      <option @if ($perancangan->kategori == 'kerja') selected @endif value="kerja">Kerja</option>
-
+                      <option @if ($perancangan->kategori=='bekalan') selected @endif value='bekalan'>Bekalan</option>
+                      <option @if ($perancangan->kategori=='perkhidmatan') selected @endif value='perkhidmatan'>Perkhidmatan</option>
+                      <option @if ($perancangan->kategori=='kerja') selected @endif value='kerja'>Kerja </option>
                     </select>
                     
 
@@ -84,9 +83,9 @@
                     <select name="kaedah" class="form-control">
                       
                       <option hidden>Sila Pilih</option>
-                      <option @if ($perancangan->kaedah == 'pembelian terus') selected @endif value="pembelian terus">Pembelian Terus</option>
-                      <option @if ($perancangan->kaedah == 'sebutharga') selected @endif value="sebutharga">Sebutharga</option>
-                      <option @if ($perancangan->kaedah == 'tender') selected @endif value="tender">Tender</option>
+                      <option @if ($perancangan->kaedah=='pembelian terus') selected @endif value='pembelian terus'>Pembelian Terus</option>
+                      <option @if ($perancangan->kaedah=='sebutharga') selected @endif value='sebutharga'>Sebutharga</option>
+                      <option @if ($perancangan->kaedah=='tender') selected @endif value='tender'>Tender</option>
 
                     </select>
 
@@ -105,16 +104,17 @@
                   <label>Pegawai Pengesah</label>
                   <select class="form-control" name="pengesah">
                     <option hidden>Sila Pilih</option>
-                    <option>Ali Bin Raz</option>
-                    <option>Siti Bin Ahmad</option>
+                    <option @if ($perancangan->pengesah=='1') selected @endif value='1'>Ali Bin Raz</option>
+                    <option @if ($perancangan->pengesah=='2') selected @endif value='2'>Siti Binti Ahmad</option>
+
                   </select>
 
 
                   <label>Pegawai Pelulus</label>
                   <select class="form-control" name="pelulus">
                     <option hidden>Sila Pilih</option>
-                    <option>Ali Bin Raz</option>
-                    <option>Lily San</option>
+                    <option @if ($perancangan->pelulus=='1') selected @endif value='1'>Ali Bin Raz</option>
+                    <option @if ($perancangan->pelulus=='2') selected @endif value='2'>Siti Binti Ahmad</option>
                   </select>
 
                 </fieldset>

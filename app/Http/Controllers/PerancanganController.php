@@ -37,7 +37,16 @@ class PerancanganController extends Controller
         $perancangan->pengesah=$request->pengesah;
         $perancangan->pelulus=$request->pelulus;
 
-        $perancangan->status="Menunggu pengesahan";
+        //$perancangan->status="Menunggu pengesahan";
+
+        if ($request->status="draf"){
+            $perancangan->status="Draf";
+        }
+
+        else if($request->status="hantar"){
+            $perancangan->status="Menunggu pengesahan";
+            
+        }
 
         $perancangan->save();
         return redirect('/perancangan');
@@ -69,12 +78,21 @@ class PerancanganController extends Controller
         $perancangan->pelulus=$request->pelulus;
         $perancangan->catatan_pengesah=$request->catatan_pengesah;
         $perancangan->catatan_pelulus=$request->catatan_pelulus;
-        $perancangan->status=$request->status;
+        $perancangan->status="Menunggu pengesahan";
 
         $perancangan->save();
 
         $url = '/perancangan/'.$perancangan->id;
         return redirect('/perancangan');
+
+    }
+
+    public function indexpengesah()
+    {
+        $perancangan = Perancangan::where('status','Menunggu Pengesahan')->get();
+        return view('perancangan.indexpengesah', [
+            'perancangan' => $perancangan
+        ]);
 
     }
 
@@ -104,6 +122,17 @@ class PerancanganController extends Controller
         return redirect('/perancangan');
 
     }
+
+    public function indexpelulus()
+    {
+    
+        $perancangan = Perancangan::where('status','Menunggu Kelulusan')->get();
+        return view('perancangan.indexpelulus', [
+            'perancangan' => $perancangan
+        ]);
+
+    }
+
 
     public function editPelulus(Perancangan $perancangan)
     {
