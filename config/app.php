@@ -174,6 +174,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        
 
     ],
 
@@ -190,7 +191,8 @@ return [
 
     'aliases' => [
 
-        'App' => Illuminate\Support\Facades\App::class,
+        'providers' => [Barryvdh\DomPDF\ServiceProvider::class],
+        'aliases' => ['PDF' => Barryvdh\DomPDF\Facade::class],
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,

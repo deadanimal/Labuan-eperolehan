@@ -22,8 +22,7 @@ Route::resource('/perancangan',PerancanganController::class);
 Route::resource('/pembekal', PembekalController::class);
 Route::resource('/dokumen', DokumenController::class);
 Route::resource('/cidb', CidbController::class);
-Route::resource('/kod',kodController::class);
-
+Route::resource('/kod',KodController::class);
 
 
 Route::get('/indexpengesah', [PerancanganController::class,'indexpengesah']);
@@ -32,9 +31,8 @@ Route::post('/updatepengesah', [PerancanganController::class,'updatepengesah']);
 
 Route::get('/indexpelulus',[PerancanganController::class,'indexpelulus']);
 Route::get('/editpelulus/{id}',[PerancanganController::class,'editpelulus']);
-Route::post('/updatepelulus/{id}',[PerancanganController::class,'updatepelulus']);
+Route::post('/updatepelulus',[PerancanganController::class,'updatepelulus']);
 
-// Route::get('/jadual-minggu', [NotisController::class,'jadual_minggu']);
 
 
 Route::get('/', function () {

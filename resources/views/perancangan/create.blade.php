@@ -50,7 +50,7 @@
                   </div>
 
                   <div class="col-md-6 ps-md-2">
-                    <label>Tajuk Pelan:</label>
+                    <label>Tajuk Pelan</label>
                     <div class="input-group">
                       <input type="text" class="form-control" style="width:500px;" name="tajuk">
                     </div>
@@ -121,8 +121,8 @@
                   <button type="reset"  class="btn btn-primary"  style="margin:5px; float:right">Hapus</button> --}}
 
                   <button class="btn bg-gradient-light mb-0 js-btn-prev" type="button" title="Prev">Kembali</button>
-                  <button class="btn btn-success" type="submit" name="status" value="draf">Draf</button> 
-                  <button class="btn btn-primary" type="submit" name="status" value="hantar" >Hantar</button> 
+                  <button class="btn btn-success" type="submit" name="status_pelan" value="draf">Draf</button> 
+                  <button class="btn btn-primary" type="submit" name="status_pelan" value="hantar" >Hantar</button> 
 
                 </form>
             

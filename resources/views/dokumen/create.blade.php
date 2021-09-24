@@ -12,6 +12,8 @@
     <title>
       ePerolehan
     </title>
+
+    
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Nucleo Icons -->
@@ -42,8 +44,8 @@
 
 
 <body class="features-sections">
-<a href="/perancangan" class="previous round">&#8249;</a>
-  <h5>Pendaftaran Pembekal: Dokumen Sokongan (MOF)</h5>
+<a href="/kod" class="previous round">&#8249;</a>
+<br><br>
     </div>
     <!-- Else bootstrap marketplace -->
     <div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7">
@@ -54,14 +56,15 @@
               <form class="form-inline" method="POST" action="/dokumen" enctype="multipart/form-data"> 
                 @csrf
                 <br>
-                <fieldset>
-                  <legend>Dokumen yang perlu dilampirkan:</legend>
+        
+                  <legend>Pendaftaran Pembekal- Akaun MOF</legend>
+                  <h6> Dokumen yang perlu dilampirkan</h6> 
                   <br><br>
                   
                   <div class="col-md-6 ps-md-2">
                     <label>Sijil dari pihak Kementerian Kewangan Malaysia</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="file" name="sijil_mof">
+                      <input class="form-control" type="file" name="sijil_mof" >
                     </div>
                   </div>
 
@@ -94,7 +97,7 @@
                   </div>
 
                   <div class="col-md-6 ps-md-2">
-                    <label>Kod Bidang MOF</label>
+                    <label>Kod Bidang</label>
                     <div class="input-group mb-2">
                       <select class="form-control" name="id_bidangkod">
                         <option hidden>Sila Pilih</option>
@@ -102,12 +105,15 @@
                         <optgroup label="{{$kod->kategori_kod}}">
                            <option value="{{$kod->id}}">{{$kod->pengkhususan_kod}}-{{$kod->deskripsi_kod}}</option>
                           @endforeach 
-                        <option>
+                        </select>
+
                     </div>
                   </div>
 
 
-                </fieldset>
+
+
+    
                 <br><br><br>
                 
 

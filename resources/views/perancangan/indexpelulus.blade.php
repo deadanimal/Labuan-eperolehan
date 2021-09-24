@@ -22,15 +22,17 @@
                   <th>Nama Perolehan</th>
                   <th>Kategori Perolehan</th>
                   <th>Status</th>
+                  <th>Cetak Pelan</th>
                 </tr>
 
                 @foreach($perancangan as $perancangan)
                 <tr>
                   <td>{{$perancangan->id}}</td>
                   <td>{{$perancangan->tahun_pelan}}</td>
-                  <td><a href="/updatepelulus/{{$perancangan->id}}/editpelulus">{{$perancangan->tajuk}}</a></td>
+                  <td><a href="/editpelulus/{{$perancangan->id}}">{{$perancangan->tajuk}}</a></td>
                   <td>{{$perancangan->kategori}}</td>
                   <td>{{$perancangan->status}}</td>
+                  <td><a href="/cetakpelan/{{$perancangan->id}}">Cetak</a>
                   @endforeach
               </tr>
 

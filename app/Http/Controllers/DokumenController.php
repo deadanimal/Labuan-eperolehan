@@ -35,11 +35,17 @@ class DokumenController extends Controller
     {
         $dokumen = new Dokumen();
 
+        $sijil_mof=$request->file('sijil_mof')->store('sijil_mof');
+        $sijil_perbendaharaan=$request->file('sijil_perbendaharaan')->store('sijil_perbendaharaan');
+        $sijil_bumiputera=$request->file('sijil_bumiputera')->store('sijil_bumiputera');
+        $sijil_taraf=$request->file('sijil_taraf')->store('sijil_taraf');
 
-        $dokumen->sijil_mof=$request->sijil_mof;
-        $dokumen->sijil_perbendaharaan=$request->sijil_perbendaharaan;
-        $dokumen->sijil_bumiputera=$request->sijil_bumiputera;
-        $dokumen->sijil_taraf=$request->sijil_taraf;
+
+        $dokumen->sijil_mof=$sijil_mof;
+        $dokumen->sijil_perbendaharaan=$sijil_perbendaharaan;
+        $dokumen->sijil_bumiputera=$sijil_bumiputera;
+        $dokumen->sijil_taraf=$sijil_taraf;
+
         $dokumen->tarikh_sah=$request->tarikh_sah;
         $dokumen->rangkaian_perniagaan=$request->rangkaian_perniagaan;
         $dokumen->no_pendaftaran_cbp=$request->no_pendaftaran_cbp;

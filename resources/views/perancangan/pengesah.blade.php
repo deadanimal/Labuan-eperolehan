@@ -86,7 +86,7 @@
                       <option hidden>Sila Pilih</option>
                       <option @if ($perancangan->kaedah == 'pembelian terus') selected @endif value="pembelian terus">Pembelian Terus</option>
                       <option @if ($perancangan->kaedah == 'sebutharga') selected @endif value="sebutharga">Sebutharga</option>
-                      <option @if ($perancangan->kaedah == 'tender') selected @endif value="tender">Tender</option>
+                      <option @if ($perancangan->kaedah == 'tender') selected @endif value="tender">Tender</option> 
 
                     </select>
 
@@ -103,16 +103,18 @@
                   <br><br>
 
                   <label>Pegawai Pengesah</label>
-                  <select class="form-control" name="pengesah" >
+                  <select class="form-control" name="pengesah"  readonly>
                     <option hidden>Sila Pilih</option>
-                    <option>Ali Bin Raz</option>
+                    <option @if ($perancangan->pengesah == '1') selected @endif value="1">Ali Bin Raz</option>           
+                    <option @if ($perancangan->pengesah == '2') selected @endif value="2">Siti Binti Ahmad</option>
                   </select>
 
 
                   <label>Pegawai Pelulus</label>
-                  <select class="form-control" name="pelulus" >
+                  <select class="form-control" name="pelulus" readonly>
                     <option hidden>Sila Pilih</option>
-                    <option>Ali Bin Raz</option>
+                    <option @if ($perancangan->pelulus == '1') selected @endif value="1">Ali Bin Raz</option>           
+                    <option @if ($perancangan->pelulus == '2') selected @endif value="2">Siti Binti Ahmad</option>
                   </select>
 
                 </fieldset>
@@ -122,6 +124,7 @@
 
                 <label>Tindakan</label>
                 <select class="form-control" name="status">
+                  <option hidden>Sila Pilih</option>
                   <option value="Semak Semula">Semak Semula</option>
                   <option value="Menunggu Kelulusan">Disahkan</option>
                 </select>

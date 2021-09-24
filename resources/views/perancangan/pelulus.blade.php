@@ -34,11 +34,11 @@
           <div class="row justify-space-between py-2">
             <div class="col-lg-3 me-auto">
             </div>
-              <form method="POST" action="/updatepelulus/{{$id}}"> 
+              <form method="POST" action="/updatepelulus"> 
                 @csrf
-                @method('PUT')
                 <br>
                 <fieldset>
+                  <input type="hidden" name="perancangan_id"  value="{{$perancangan->id}}">
                   <legend>Butiran Pelan</legend>
                   <br><br>
                 <div class="row">
@@ -103,22 +103,25 @@
                   <br><br>
 
                   <label>Pegawai Pengesah</label>
-                  <select class="form-control" name="pengesah" >
+                  <select class="form-control" name="pengesah"  readonly>
                     <option hidden>Sila Pilih</option>
-                    <option>Ali Bin Raz</option>
+                    <option @if ($perancangan->pengesah == '1') selected @endif value="1">Ali Bin Raz</option>           
+                    <option @if ($perancangan->pengesah == '2') selected @endif value="2">Siti Binti Ahmad</option>
                   </select>
 
 
                   <label>Pegawai Pelulus</label>
-                  <select class="form-control" name="pelulus" >
+                  <select class="form-control" name="pelulus" readonly>
                     <option hidden>Sila Pilih</option>
-                    <option>Ali Bin Raz</option>
+                    <option @if ($perancangan->pelulus == '1') selected @endif value="1">Ali Bin Raz</option>           
+                    <option @if ($perancangan->pelulus == '2') selected @endif value="2">Siti Binti Ahmad</option>
                   </select>
 
                 </fieldset>
 
-                <label>Catatan Pengesah: </label>
-                <textarea class="form-control" name="catatan_pengesah" value={{$perancangan->catatan_pengesah}} readonly></textarea>
+                <label>Catatan Pengesah: </label>                
+                <textarea class="form-control" name="catatan_pengesah" value="{{$perancangan->catatan_pengesah}}" readonly></textarea>
+
 
                 <label>Catatan Pelulus:</label>
                 <textarea class="form-control" name="catatan_pelulus" placeholder="Sila Nyatakan Komen Anda"></textarea>

@@ -29,9 +29,12 @@
       </div>
 
       <section>
-              <form class="form-inline" method="POST" action="/pembekal"> 
-                @csrf
+        <form method="POST" action="/pembekal/{{$pembekal->id}}">
+            @csrf
+            @method('PUT')
                 <div class="card-body">
+
+                <fieldset>
 
                 <label>Jenis Akaun</label>
                 <select name="jenis_akaun" class="form-control" id="jenis_akaun">
@@ -41,7 +44,6 @@
                   <option value="Kerja" id="kerja">Kerja</option>
                 </select>
 
-                 <fieldset id="maklumat_perniagaan" style="hidden">
                   <div class="row">
                     <div class="col-md-6">
                       <label>No Pendaftaran Perniagaan</label>
@@ -213,25 +215,6 @@
           </div>
          
         </div>
-
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script type="text/javascript">
-             $(function() {
-                  $("#jenis_akaun").change(function() {
-                          if ($(this).val() == "perkhidmatan") {
-                            $("#dokumen.create").show();
-
-                           } 
-                           else if ($(this).val() == "kerja") {
-                            $("#cidb.create").show();
-
-                           }
-                           else {
-                           $("#maklumat_perniagaan").show();
-                           }
-                  });
-        });
- </script>
       
 @stop
 

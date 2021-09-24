@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Perancangan;
 use Illuminate\Http\Request;
+use \PDF;
 
 class PerancanganController extends Controller
 {
@@ -39,12 +40,12 @@ class PerancanganController extends Controller
 
         //$perancangan->status="Menunggu pengesahan";
 
-        if ($request->status="draf"){
-            $perancangan->status="Draf";
+       
+        if ($request->status_pelan=="hantar"){
+            $perancangan->status="Menunggu Pengesahan";
         }
-
-        else if($request->status="hantar"){
-            $perancangan->status="Menunggu pengesahan";
+        else if($request->status_pelan=="draf"){
+            $perancangan->status="Draf";
             
         }
 
@@ -67,6 +68,7 @@ class PerancanganController extends Controller
 
     public function update(Request $request, Perancangan $perancangan)
     {
+        
         $perancangan->tahun_pelan=$request->tahun_pelan;
         $perancangan->tajuk=$request->tajuk;
         $perancangan->perihal=$request->perihal;
@@ -81,8 +83,6 @@ class PerancanganController extends Controller
         $perancangan->status="Menunggu pengesahan";
 
         $perancangan->save();
-
-        $url = '/perancangan/'.$perancangan->id;
         return redirect('/perancangan');
 
     }
@@ -97,15 +97,18 @@ class PerancanganController extends Controller
 
     }
 
-    public function editPengesah(Perancangan $perancangan, $id)
+    public function editpengesah(Perancangan $perancangan, $id)
     {
         $perancangan = Perancangan::where('id',$id)->first();
+
         return view('perancangan.pengesah', ['perancangan'=>$perancangan]); 
     }
 
 
-    public function updatePengesah(Request $request, Perancangan $perancangan)
+    public function updatepengesah(Request $request, Perancangan $perancangan)
     {
+        $perancangan = Perancangan::where('id',$request->perancangan_id)->first();
+
 
         $perancangan->tahun_pelan=$request->tahun_pelan;
         $perancangan->tajuk=$request->tajuk;
@@ -118,9 +121,11 @@ class PerancanganController extends Controller
         $perancangan->pelulus=$request->pelulus;
         $perancangan->catatan_pengesah=$request->catatan_pengesah;;
         $perancangan->status=$request->status;
-        $perancangan->id=$request->perancangan_id;
+        // $perancangan->id=$request->perancangan_id;
 
-        $perancangan->update();
+        $perancangan->save();
+        // dd($perancangan->status);
+
         return redirect('/indexpengesah');
 
     }
@@ -136,7 +141,7 @@ class PerancanganController extends Controller
     }
 
 
-    public function editPelulus(Perancangan $perancangan)
+    public function editpelulus(Perancangan $perancangan,$id)
     {
         $perancangan = Perancangan::where('id',$id)->first();
         return view('perancangan.pelulus', ['perancangan'=>$perancangan]); 
@@ -144,8 +149,10 @@ class PerancanganController extends Controller
     }
 
 
-    public function updatePelulus(Request $request, Perancangan $perancangan)
-    {
+    public function updatepelulus(Request $request, Perancangan $perancangan)
+    { 
+        //dd($request);
+        $perancangan = Perancangan::where('id',$request->perancangan_id)->first();
 
         $perancangan->tahun_pelan=$request->tahun_pelan;
         $perancangan->tajuk=$request->tajuk;
@@ -158,13 +165,27 @@ class PerancanganController extends Controller
         $perancangan->pelulus=$request->pelulus;
         $perancangan->catatan_pengesah=$request->catatan_pengesah;;
         $perancangan->status=$request->status;
-
+        // $perancangan->id=$request->perancangan_id;
+        
+       
         $perancangan->save();
-
-        $url = '/updatepelulus/'.$perancangan->id;
-        return redirect('/perancangan');
+        return redirect('/indexpelulus');
 
     }
+
+    public function cetakpelan($id)
+    {
+        // dd($id);
+        $perancangan= Perancangan::find($id);
+        $perancangan->status = "Diluluskan";
+        $perancangan->save();
+
+
+        $pdf = PDF::loadView('pdf.cetakpelan', [
+            'perancangan' => $perancangan]);
+            return $pdf->download($perancangan->tajuk.'.pdf');
+    }
+
 
     public function destroy(Perancangan $perancangan)
     {
