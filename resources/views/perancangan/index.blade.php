@@ -23,6 +23,7 @@
                   <th>Nama Perolehan</th>
                   <th>Kategori Perolehan</th>
                   <th>Status</th>
+                  <th>Tindakan</th>
                 </tr>
 
                 @foreach($perancangan as $perancangan)
@@ -32,6 +33,7 @@
                   <td><a href="/perancangan/{{$perancangan->id}}/edit">{{$perancangan->tajuk}}</a></td>
                   <td>{{$perancangan->kategori}}</td>
                   <td>{{$perancangan->status}}</td>
+                  <td><a href="/cetakpelan/{{$perancangan->id}}">Cetak</a>
                   @endforeach
               </tr>
 

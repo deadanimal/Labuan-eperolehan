@@ -31,7 +31,7 @@ class PembekalController extends Controller
     public function store(Request $request)
     {
         $pembekal = new Pembekal();
-
+        $pembekal->jenis_akaun=$request->jenis_akaun;
         $pembekal->no_pendaftaran=$request->no_pendaftaran;
         $pembekal->nama_pemilik=$request->nama_pemilik;
         $pembekal->kewarganegaraan=$request->kewarganegaraan;
@@ -53,7 +53,19 @@ class PembekalController extends Controller
         $pembekal->no_faks=$request->no_faks;
         $pembekal->nama_bank=$request->nama_bank;
         $pembekal->no_akaun=$request->no_akaun;
-        $pembekal->id_dokumen=$request->id_dokumen;
+
+
+        $pembekal->save();
+
+        if($request->jenis_akaun=='Kerja'){
+            return redirect('/cidb/create');
+        }
+        else if($request->jenis_akaun=='Pembekal'){
+            return redirect('/dokumen/create');
+        }
+
+    
+
         //dd($request->dokumen_sokongan);
 
         // foreach ($request->dokumen_sokongan as $dokumen) {
@@ -69,8 +81,8 @@ class PembekalController extends Controller
         //$pembekal->'dokumen_sokongan' = $dokumen;
 
 
-        $pembekal->save();
-        return redirect('/pembekal');
+      
+         return redirect('/pembekal');
     }
 
 

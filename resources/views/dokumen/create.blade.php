@@ -110,13 +110,6 @@
                     </div>
                   </div>
 
-
-
-
-    
-                <br><br><br>
-                
-
                   <br><br>
                   {{-- <button type="submit" class="btn btn-primary" style="margin:5px; float:">Hantar</button>  
                   <button type="reset"  class="btn btn-primary"  style="margin:5px; float:right">Hapus</button> --}}

@@ -17,7 +17,6 @@ class CreateCidbsTable extends Migration
             $table->id();
             $table->String('sijil_perakuan')->nullable();
             $table->String('sijil_gred')->nullable();
-            $table->String('bidangkod')->nullable();
             $table->Date('tarikh_sah')->nullable();
             $table->foreignId('id_pembekal')->nullable();
             $table->foreignId('id_bidangkod')->nullable();

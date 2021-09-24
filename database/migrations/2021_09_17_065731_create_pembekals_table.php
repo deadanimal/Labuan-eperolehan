@@ -24,7 +24,7 @@ class CreatePembekalsTable extends Migration
             $table->String("nama_perniagaan")->nullable();
             $table->String("lokasi")->nullable();
             $table->String("email")->nullable();
-            $table->String("tarikh_penubuhan")->nullable();
+            $table->date("tarikh_penubuhan")->nullable();
             $table->String("no_cukai")->nullable();
             $table->String("alamat")->nullable();
             $table->String("poskod")->nullable();

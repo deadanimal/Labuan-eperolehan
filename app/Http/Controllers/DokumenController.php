@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dokumen;
 use App\Models\Kod;
+use App\Models\Pembekal;
 use Illuminate\Http\Request;
 
 class DokumenController extends Controller

@@ -32,7 +32,7 @@
                   <td><a href="/editpelulus/{{$perancangan->id}}">{{$perancangan->tajuk}}</a></td>
                   <td>{{$perancangan->kategori}}</td>
                   <td>{{$perancangan->status}}</td>
-                  <td><a href="/cetakpelan/{{$perancangan->id}}">Cetak</a>
+
                   @endforeach
               </tr>
 

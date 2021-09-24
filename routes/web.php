@@ -24,6 +24,8 @@ Route::resource('/dokumen', DokumenController::class);
 Route::resource('/cidb', CidbController::class);
 Route::resource('/kod',KodController::class);
 
+Route::get('/cetakpelan/{id}',[PerancanganController::class,'cetakpelan']);
+
 
 Route::get('/indexpengesah', [PerancanganController::class,'indexpengesah']);
 Route::get('/editpengesah/{id}', [PerancanganController::class,'editpengesah']);

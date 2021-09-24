@@ -29,19 +29,16 @@
       </div>
 
       <section>
-              <form class="form-inline" method="POST" action="/pembekal"> 
-                @csrf
+        <form class="form-inline" method="POST" action="/pembekal" name="form-pembekal"> 
+          @csrf
+          <label>Jenis Akaun</label>
+          <select name="jenis_akaun" class="form-control" id="jenis_akaun">
+            <option hidden>Sila Pilih</option>
+            <option value="Asas">Asas</option>
+            <option value="Pembekal">Pembekal</option>
+            <option value="Kerja">Kerja</option>
+          </select>
                 <div class="card-body">
-
-                <label>Jenis Akaun</label>
-                <select name="jenis_akaun" class="form-control" id="jenis_akaun">
-                  <option hidden>Sila Pilih</option>
-                  <option value="Bekalan" id=bekalan>Bekalan</option>
-                  <option value="Perkhidmatan" id="perkhidmatan">Perkhidmatan</option>
-                  <option value="Kerja" id="kerja">Kerja</option>
-                </select>
-
-                 <fieldset id="maklumat_perniagaan" style="hidden">
                   <div class="row">
                     <div class="col-md-6">
                       <label>No Pendaftaran Perniagaan</label>
@@ -213,6 +210,9 @@
           </div>
          
         </div>
+      
+      <section>
+      
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script type="text/javascript">
@@ -227,7 +227,7 @@
 
                            }
                            else {
-                           $("#maklumat_perniagaan").show();
+                           $("#perniagaan").show();
                            }
                   });
         });

@@ -28,7 +28,7 @@
                   <td>{{$pembekal->id}}</td>
                   <td>{{$pembekal->jenis_akaun}}</td>
                   <td><a href="/pembekal/{{$pembekal->id}}/edit">{{$pembekal->nama_perniagaan}}</a></td>
-                  <td>{{$pembekal->no_perniagaan}}</td>
+                  <td>{{$pembekal->no_pendaftaran}}</td>
                   @endforeach
               </tr>
 

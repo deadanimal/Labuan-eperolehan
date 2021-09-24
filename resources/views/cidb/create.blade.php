@@ -63,7 +63,7 @@
                   <div class="col-md-6 ps-md-2">
                     <label>Sijil Perakuan Pendaftaran Kontraktor</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="file" name="sijil_perakuan">
+                      <input class="form-control" type="file" name="sijil_perakuan" required>
                     </div>
                   </div>
                 
@@ -71,25 +71,27 @@
                   <div class="col-md-6 ps-md-2">
                     <label>Sijil Gred CIDB</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="file" name="sijil_gred">
+                      <input class="form-control" type="file" name="sijil_gred" required>
                     </div>
                   </div>
 
                   <div class="col-md-6 ps-md-2">
                     <label>Kod Bidang</label>
                     <div class="input-group mb-2">
-                      <select class="form-control" name="id_bidangkod">
+                      <select class="form-control" name="id_bidangkod" required>
                         <option hidden>Sila Pilih</option>
                         @foreach($kod as  $kod)
-                        <optgroup label="{{$kod->kategori_kod}}">
+                        <optgroup label="{{$kod->kategori_kod}}"></optgroup>
                            <option value="{{$kod->id}}">{{$kod->pengkhususan_kod}}-{{$kod->deskripsi_kod}}</option>
                           @endforeach 
+                        
+                      </select>
                     </div>
 
                     <div class="col-md-6 ps-md-2">
                       <label>Tarikh Sah Laku Sijil</label>
                       <div class="input-group mb-2">
-                        <input class="form-control" type="date" name="tarikh_sah">
+                        <input class="form-control" type="date" name="tarikh_sah" required>
                       </div>
                     </div>
 
@@ -97,7 +99,6 @@
                 </fieldset>
                 <br><br><br>
                 
-
                   <br><br>
                   {{-- <button type="submit" class="btn btn-primary" style="margin:5px; float:">Hantar</button>  
                   <button type="reset"  class="btn btn-primary"  style="margin:5px; float:right">Hapus</button> --}}
