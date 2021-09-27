@@ -23,10 +23,10 @@ class DokumenController extends Controller
         // ]);
     }
 
-    public function create()
+    public function create(Pembekal $pembekal)
     {
-        Session::set('id_pembekal',$pembekal->id);
-        Session::get($id_pembekal);
+        Session::get($id_pembekal,$pembekal->id);
+        //Session::get($id_pembekal);
         dd($id_pembekal);
 
         $dokumen = Dokumen::all();

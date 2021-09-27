@@ -22,6 +22,19 @@
     <link href="../../assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="../../assets/css/soft-design-system.css?v=1.0.5" rel="stylesheet" />
+
+    <style>
+      .currency {
+      padding-left:12px;
+    }
+
+    .currency-symbol {
+      position:absolute;
+      padding: 2px 5px;
+    }
+
+    </style>
+
   </head>
 
 <body class="features-sections">
@@ -47,21 +60,20 @@
                   <div class="col-md-3">
                     <label>Tahun Perancangan:</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="text" name="tahun_pelan">
-                    </div>
-                  </div>
-
-                  <div class="col-md-6 ps-md-2">
-                    <label>Tajuk Pelan</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control" style="width:500px;" name="tajuk">
+                      <input class="form-control" type="month" name="tahun_pelan">
                     </div>
                   </div>
                 </div>
+                
+                    <label>Tajuk Pelan</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" name="tajuk">
+                    </div>
+                  </div>
+     
 
                 <label>Perihal Pelan</label>
-                <input type="text" name="perihal" class="form-control" style="width:500px;"> 
-
+                <textarea name="perihal" class="form-control" rows="3"></textarea>
                 {{-- <div class="container">
                   <div class="row justify-space-between py-2">
                     <div class="col-lg-4mx-auto">
@@ -92,7 +104,8 @@
                     <input type="date" name="tarikh" class="form-control">
 
                     <label>Amaun Anggaran</label>
-                    <input type=text name="amaun" class="form-control">
+                    <input type="number"name="amaun" class="form-control" id="currency-field" pattern="^\RM\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="0.00">
+
 
                 </fieldset>
                 <br><br><br>
@@ -124,16 +137,109 @@
               
                   <a href="/perancangan" class="btn bg-gradient-light w-auto me-2">Kembali</a>
                   <button class="btn bg-gradient-info w-auto me-2" type="submit" name="status_pelan" value="draf">Draf</button> 
-                  <button class="btn bg-gradient-success w-auto me-2" type="submit" name="status_pelan" value="hantar" >Hantar</button> 
+                  <button class="btn bg-gradient-primary w-auto me-2" type="submit" name="status_pelan" value="hantar" >Hantar</button> 
 
+                  
                 </form>
-            
+                
+                @isset($message)
+                <div class="alert alert-success">
+                <strong>{{$message}}</strong>
+                </div>
+                @endif
 
             </div>
           </div>
          
         </div>
-      
+        <script>
+
+        // Jquery Dependency
+
+        $("input[data-type='currency']").on({
+            keyup: function() {
+              formatCurrency($(this));
+            },
+            blur: function() { 
+              formatCurrency($(this), "blur");
+            }
+        });
+        
+        
+        function formatNumber(n) {
+          // format number 1000000 to 1,234,567
+          return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+        }
+        
+        
+        function formatCurrency(input, blur) {
+          // appends $ to value, validates decimal side
+          // and puts cursor back in right position.
+          
+          // get input value
+          var input_val = input.val();
+          
+          // don't validate empty input
+          if (input_val === "") { return; }
+          
+          // original length
+          var original_len = input_val.length;
+        
+          // initial caret position 
+          var caret_pos = input.prop("selectionStart");
+            
+          // check for decimal
+          if (input_val.indexOf(".") >= 0) {
+        
+            // get position of first decimal
+            // this prevents multiple decimals from
+            // being entered
+            var decimal_pos = input_val.indexOf(".");
+        
+            // split number by decimal point
+            var left_side = input_val.substring(0, decimal_pos);
+            var right_side = input_val.substring(decimal_pos);
+        
+            // add commas to left side of number
+            left_side = formatNumber(left_side);
+        
+            // validate right side
+            right_side = formatNumber(right_side);
+            
+            // On blur make sure 2 numbers after decimal
+            if (blur === "blur") {
+              right_side += "00";
+            }
+            
+            // Limit decimal to only 2 digits
+            right_side = right_side.substring(0, 2);
+        
+            // join number by .
+            input_val = "$" + left_side + "." + right_side;
+        
+          } else {
+            // no decimal entered
+            // add commas to number
+            // remove all non-digits
+            input_val = formatNumber(input_val);
+            input_val = "$" + input_val;
+            
+            // final formatting
+            if (blur === "blur") {
+              input_val += ".00";
+            }
+          }
+          
+          // send updated string to input
+          input.val(input_val);
+        
+          // put caret back in the right position
+          var updated_len = input_val.length;
+          caret_pos = updated_len - original_len + caret_pos;
+          input[0].setSelectionRange(caret_pos, caret_pos);
+        }
+
+      </script>
 @stop
 
 

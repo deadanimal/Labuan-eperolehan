@@ -49,7 +49,7 @@ class PembekalController extends Controller
         $pembekal->negeri=$request->negeri;
         $pembekal->negara=$request->negara;
         $pembekal->daerah=$request->daerah;
-        $pembekal->bandar=$request->bandar;
+        //$pembekal->bandar=$request->bandar;
         $pembekal->no_tel=$request->no_tel;
         $pembekal->no_pejabat=$request->no_pejabat;
         $pembekal->no_faks=$request->no_faks;
@@ -64,7 +64,7 @@ class PembekalController extends Controller
         if($request->jenis_akaun=='Kerja'){
             return redirect('/cidb/create');
            }
-           
+
         else if($request->jenis_akaun=='Pembekal'){
             return redirect('/dokumen/create');
         }
@@ -109,7 +109,7 @@ class PembekalController extends Controller
         $pembekal->negeri=$request->negeri;
         $pembekal->negara=$request->negara;
         $pembekal->daerah=$request->daerah;
-        $pembekal->bandar=$request->bandar;
+        //$pembekal->bandar=$request->bandar;
         $pembekal->no_tel=$request->no_tel;
         $pembekal->no_pejabat=$request->no_pejabat;
         $pembekal->no_faks=$request->no_faks;

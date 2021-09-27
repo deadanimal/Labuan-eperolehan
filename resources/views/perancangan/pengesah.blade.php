@@ -133,9 +133,9 @@
                   {{-- <button type="submit" class="btn btn-primary" style="margin:5px; float:">Hantar</button>  
                   <button type="reset"  class="btn btn-primary"  style="margin:5px; float:right">Hapus</button> --}}
                   
-                  <a href="/perancangan" class="btn bg-gradient-light mb-0 js-btn-prev" type="button">Kembali</a>
+                  <a href="/perancangan" class="btn bg-gradient-light w-auto me-2" type="button">Kembali</a>
                   {{-- <button class="btn bg-gradient-light mb-0 js-btn-prev" type="button" title="Prev">Kembali</button> --}}
-                  <button class="btn btn-primary" type="submit" title="Send">Kemaskini</button> 
+                  <button class="btn bg-gradient-primary w-auto me-2" type="submit" title="Send">Kemaskini</button> 
 
 
                 </form>
