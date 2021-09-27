@@ -17,10 +17,11 @@
   </head>
   
 <body class="features-sections">
-<a href="/pembekal">Kembali</a>
 
   <h3>Pendaftaran Pembekal</h3>
+
 </div>
+<br><br>
 <!-- Else bootstrap marketplace -->
 <div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7">
   <div class="container border-bottom">
@@ -31,14 +32,21 @@
       <section>
         <form class="form-inline" method="POST" action="/pembekal" name="form-pembekal"> 
           @csrf
-          <label>Jenis Akaun</label>
-          <select name="jenis_akaun" class="form-control" id="jenis_akaun">
-            <option hidden>Sila Pilih</option>
-            <option value="Asas">Asas</option>
-            <option value="Pembekal">Pembekal</option>
-            <option value="Kerja">Kerja</option>
-          </select>
-                <div class="card-body">
+          <br><br>
+
+          <div class="card-body">
+          <div class="mb-4">
+            <label>Jenis Akaun</label>
+            <div class="input-group">
+              <select name="jenis_akaun" class="form-control">
+                <option hidden>Sila Pilih</option>
+                <option value="Asas">Asas</option>
+                <option value="Pembekal">Pembekal</option>
+                <option value="Kerja">Kerja</option>
+              </select>
+            </div>
+          </div>
+
                   <div class="row">
                     <div class="col-md-6">
                       <label>No Pendaftaran Perniagaan</label>
@@ -46,6 +54,7 @@
                         <input class="form-control" type="text" name="no_pendaftaran">
                       </div>
                     </div>
+
                     <div class="col-md-6 ps-2">
                       <label>Nama Pemilik</label>
                       <div class="input-group">

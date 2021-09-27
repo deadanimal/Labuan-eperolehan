@@ -1,10 +1,9 @@
 @extends('base')  
 
 @section('content')
-
-  <br><br>
-  
   <h6>Senarai Kod Bidang Pendaftaran Bekalan & Perkhidmatan di Kementerian Kewangan Malaysia</h6>  
+  <br><br>
+
         </div>
         <!-- Else bootstrap marketplace -->
         <div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7">

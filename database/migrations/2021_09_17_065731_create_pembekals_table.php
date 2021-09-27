@@ -32,14 +32,7 @@ class CreatePembekalsTable extends Migration
             $table->String("no_tel")->nullable();
             $table->String("no_pejabat")->nullable();
             $table->String("no_faks")->nullable();
-            $table->String("no_cbp")->nullable();
-            $table->date("cbp_tarikhsah")->nullable();
-            $table->date("cbp_tarikhtamat")->nullable();
-            
-
-
-
-
+       
             $table->String("lokasi")->nullable();
             $table->String("email")->nullable();
       

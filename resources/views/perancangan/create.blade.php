@@ -121,7 +121,8 @@
                   <br><br>
                   {{-- <button type="submit" class="btn btn-primary" style="margin:5px; float:">Hantar</button>  
                   <button type="reset"  class="btn btn-primary"  style="margin:5px; float:right">Hapus</button> --}}
-                  <input type="reset" class="btn bg-gradient-light w-auto me-2" value="Reset" >
+              
+                  <a href="/perancangan" class="btn bg-gradient-light w-auto me-2">Kembali</a>
                   <button class="btn bg-gradient-info w-auto me-2" type="submit" name="status_pelan" value="draf">Draf</button> 
                   <button class="btn bg-gradient-success w-auto me-2" type="submit" name="status_pelan" value="hantar" >Hantar</button> 
 

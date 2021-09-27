@@ -6,6 +6,7 @@ use App\Models\Dokumen;
 use App\Models\Kod;
 use App\Models\Pembekal;
 use Illuminate\Http\Request;
+use Session;
 
 class DokumenController extends Controller
 {
@@ -24,6 +25,10 @@ class DokumenController extends Controller
 
     public function create()
     {
+        Session::set('id_pembekal',$pembekal->id);
+        Session::get($id_pembekal);
+        dd($id_pembekal);
+
         $dokumen = Dokumen::all();
         $kod = Kod::all();
         return view('dokumen.create', [
@@ -34,6 +39,8 @@ class DokumenController extends Controller
 
     public function store(Request $request)
     {
+        //$id_pembekal = Session::put('id_pembekal');
+
         $dokumen = new Dokumen();
 
         $sijil_mof=$request->file('sijil_mof')->store('sijil_mof');
@@ -54,7 +61,8 @@ class DokumenController extends Controller
         $dokumen->tarikh_tamat=$request->tarikh_tamat;
         $dokumen->salinan_kelulusan=$request->salinan_kelulusan;
         $dokumen->id_bidangkod=$request->id_bidangkod;
-        
+
+        $dokumen->id_pembekal=$request->id_pembekal;      
         //dd($request->dokumen_sokongan);
 
         // foreach ($request->dokumen_sokongan as $dokumen) {
