@@ -64,14 +64,14 @@
                   <div class="mb-4">
                     <label>Jenis Pengenalan</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="" >
+                      <input type="text" class="form-control" name="jenis_pengenalan" >
                     </div>
                   </div>
 
                   <div class="mb-4">
                     <label>No Kad Pengenalan</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" name="kad_pengenalam" >
+                      <input type="text" class="form-control" name="kad_pengenalan" >
                     </div>
                   </div>
 
@@ -174,33 +174,29 @@
 
             <fieldset>
               <h6>Maklumat Bank</h6>
-              <div class="col-md-6 ps-2">
+
+            <div class="row">
+              <div class="col-md-6">
                 <label>Nama Bank</label>
-                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="" name="nama_bank">
+                <div class="input-group mb-4">
+                  <input class="form-control" name="nama_bank" type="text" >
                 </div>
               </div>
 
               <div class="col-md-6 ps-2">
-                <label>No Akaun Bank</label>
+                <label>No Akaun</label>
                 <div class="input-group">
                   <input type="text" class="form-control" name="no_akaun">
                 </div>
               </div>
-
             </div>
 
           </fieldset>
-      
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-check form-switch mb-4">
+          <br><br>
                         {{-- <button class="btn bg-gradient-light mb-0 js-btn-prev" type="button" title="Prev">Kembali</button> --}}
-                        <a href="/pembekal" class="btn bg-gradient-light mb-0 js-btn-prev">Kembali</a>
-                        <button type="submit" class="btn bg-gradient-dark mb-0 js-btn">Daftar</button>
-                      </div>
-                    </div>
-                  </div>
+                        <a href="/pembekal" class="btn bg-gradient-light w-auto me-2">Kembali</a>
+                        <button type="submit" class="btn bg-gradient-primary w-auto me-2">Daftar</button>
+
 
            
               </form>

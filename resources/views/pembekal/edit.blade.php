@@ -30,8 +30,8 @@
 
       <section>
         <form method="POST" action="/pembekal/{{$pembekal->id}}">
-            @csrf
-            @method('PUT')
+          @csrf
+          @method('PUT')
                 <div class="card-body">
 
                 <fieldset>
@@ -39,22 +39,22 @@
                 <label>Jenis Akaun</label>
                 <select name="jenis_akaun" class="form-control" id="jenis_akaun">
                   <option hidden>Sila Pilih</option>
-                  <option value="Bekalan" id=bekalan>Bekalan</option>
-                  <option value="Perkhidmatan" id="perkhidmatan">Perkhidmatan</option>
-                  <option value="Kerja" id="kerja">Kerja</option>
+                  <option @if ($perancangan->kategori=='Asas') selected @endif value='Asas'>Asas</option>
+                  <option @if ($perancangan->kategori=='Pembekal') selected @endif value='Pembekal'>Pembekal</option>
+                  <option @if ($perancangan->kategori=='Kerja') selected @endif value='Kerja'>Kerja </option>
                 </select>
-
+                
                   <div class="row">
                     <div class="col-md-6">
                       <label>No Pendaftaran Perniagaan</label>
                       <div class="input-group mb-4">
-                        <input class="form-control" type="text" name="no_pendaftaran">
+                        <input class="form-control" type="text" name="no_pendaftaran" value="{{$pembekal->no_pendaftaran}}">
                       </div>
                     </div>
                     <div class="col-md-6 ps-2">
                       <label>Nama Pemilik</label>
                       <div class="input-group">
-                        <input type="text" class="form-control" name="nama_pemilik" >
+                        <input type="text" class="form-control" name="nama_pemilik" value="{{$perancangan->nama_pemilik}}">
                       </div>
                     </div>
                   </div>
@@ -62,42 +62,42 @@
                   <div class="mb-4">
                     <label>Kewarganegaraan</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" name="kewarganegaraan">
+                      <input type="text" class="form-control" name="kewarganegaraan" value="{{$perancangan->kewarganegaraan}}">
                     </div>
                   </div>
                   
                   <div class="mb-4">
                     <label>Jenis Pengenalan</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="" >
+                      <input type="text" class="form-control" name="jenis_pengenalan" value="{{$perancangan->jenis_pengenalan}}">
                     </div>
                   </div>
 
                   <div class="mb-4">
                     <label>No Kad Pengenalan</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" name="kad_pengenalam" >
+                      <input type="text" class="form-control" name="kad_pengenalan" value="{{$perancangan->kad_pengenalan}}" >
                     </div>
                   </div>
 
                   <div class="mb-4">
                     <label>Nama Perniagaan</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" name="nama_perniagaan">
+                      <input type="text" class="form-control" name="nama_perniagaan" value="{{$perancangan->nama_perniagaan}}">
                     </div>
                   </div>
 
                   <div class="mb-4">
                     <label>Lokasi Pendaftaran</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" name="lokasi">
+                      <input type="text" class="form-control" name="lokasi" value="{{$perancangan->lokasi}}">
                     </div>
                   </div>
 
                   <div class="mb-4">
                     <label>Email</label>
                     <div class="input-group">
-                      <input type="email" class="form-control" name="email" >
+                      <input type="email" class="form-control" name="email" value="{{$perancangan->email}}">
                     </div>
                   </div>
 
@@ -105,49 +105,49 @@
                     <div class="col-md-6">
                       <label>Tarikh Penubuhan</label>
                       <div class="input-group mb-4">
-                        <input class="form-control" name="tarikh_penubuhan" type="date" >
+                        <input class="form-control" name="tarikh_penubuhan" type="date" value="{{$perancangan->tarikh_penubuhan}}" >
                       </div>
                     </div>
 
                     <div class="col-md-6 ps-2">
                       <label>No Cukai Pendapatan</label>
                       <div class="input-group">
-                        <input type="text" class="form-control" name="no_cukai">
+                        <input type="text" class="form-control" name="no_cukai" value="{{$perancangan->no_cukai}}">
                       </div>
                     </div>
                   </div>
 
                 <div class="form-group mb-4">
                     <label>Alamat Syarikat</label>
-                    <textarea name="alamat" class="form-control" id="alamat" rows="4"></textarea>
+                    <textarea name="alamat" class="form-control" id="alamat" rows="4">{{$perancangan->alamat}}</textarea>
                 </div>
 
                 <div class="row">
                   <div class="col-md-6">
                     <label>Poskod</label>
                     <div class="input-group mb-4">
-                      <input class="form-control" name="poskod" type="text" >
+                      <input class="form-control" name="poskod" type="text" value="{{$perancangan->poskod}}">
                     </div>
                   </div>
 
                   <div class="col-md-6 ps-2">
                     <label>Negeri</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" name="negeri">
+                      <input type="text" class="form-control" name="negeri" value="{{$perancangan->negeri}}">
                     </div>
                   </div>
 
                   <div class="col-md-6 ps-2">
                     <label>Daerah</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" name="daerah">
+                      <input type="text" class="form-control" name="daerah" value="{{$perancangan->daerah}}">
                     </div>
                   </div>
 
                   <div class="col-md-6 ps-2">
                     <label>Bandar</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" name="bandar">
+                      <input type="text" class="form-control" name="bandar" value="{{$perancangan->bandar}}">
                     </div>
                   </div>
                 </div>
@@ -155,7 +155,7 @@
                   <div class="mb-4">
                     <label>No Telefon</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" name="no_tel" >
+                      <input type="text" class="form-control" name="no_tel" value="{{$perancangan->no_tel}}">
                     </div>
                   </div>
 
@@ -163,14 +163,14 @@
                 <div class="col-md-6">
                   <label>No Telefon Pejabat</label>
                   <div class="input-group mb-4">
-                    <input class="form-control" type="text" name="no_pejabat">
+                    <input class="form-control" type="text" name="no_pejabat" value="{{$perancangan->no_pejabat}}">
                   </div>
                 </div>
 
                 <div class="col-md-6 ps-2">
                   <label>No Faks</label>
                   <div class="input-group">
-                    <input type="text" class="form-control" name="no_faks" >
+                    <input type="text" class="form-control" name="no_faks" value="{{$perancangan->no_faks}}">
                   </div>
                 </div>
               </div>
@@ -182,14 +182,14 @@
               <div class="col-md-6 ps-2">
                 <label>Nama Bank</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="" name="nama_bank">
+                  <input type="text" class="form-control" placeholder="" name="nama_bank" value="{{$perancangan->nama_bank}}">
                 </div>
               </div>
 
               <div class="col-md-6 ps-2">
                 <label>No Akaun Bank</label>
                 <div class="input-group">
-                  <input type="text" class="form-control" name="no_akaun">
+                  <input type="text" class="form-control" name="no_akaun" value="{{$perancangan->no_akaun}}">
                 </div>
               </div>
 

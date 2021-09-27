@@ -22,8 +22,6 @@ class CreatePembekalsTable extends Migration
             $table->String("jenis_pengenalan")->nullable();
             $table->String("kad_pengenalan")->nullable();
             $table->String("nama_perniagaan")->nullable();
-            $table->String("lokasi")->nullable();
-            $table->String("email")->nullable();
             $table->date("tarikh_penubuhan")->nullable();
             $table->String("no_cukai")->nullable();
             $table->String("alamat")->nullable();
@@ -31,10 +29,22 @@ class CreatePembekalsTable extends Migration
             $table->String("negeri")->nulable();
             $table->String("negara")->nullable();
             $table->String("daerah")->nullable();
-            $table->String("bandar")->nullable();
-            $table->String("no_pejabat")->nullable();
             $table->String("no_tel")->nullable();
+            $table->String("no_pejabat")->nullable();
             $table->String("no_faks")->nullable();
+            $table->String("no_cbp")->nullable();
+            $table->date("cbp_tarikhsah")->nullable();
+            $table->date("cbp_tarikhtamat")->nullable();
+            
+
+
+
+
+            $table->String("lokasi")->nullable();
+            $table->String("email")->nullable();
+      
+           
+  
             $table->String("nama_bank")->nullable();
             $table->String("no_akaun")->nullable();
            

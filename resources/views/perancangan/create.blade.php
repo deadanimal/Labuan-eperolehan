@@ -26,7 +26,9 @@
 
 <body class="features-sections">
 <a href="/perancangan">Kembali</a>
+<br><br>
   <h3>Cipta Pelan</h3>
+
       </div>
       <!-- Else bootstrap marketplace -->
       <div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7">
@@ -119,10 +121,9 @@
                   <br><br>
                   {{-- <button type="submit" class="btn btn-primary" style="margin:5px; float:">Hantar</button>  
                   <button type="reset"  class="btn btn-primary"  style="margin:5px; float:right">Hapus</button> --}}
-
-                  <button class="btn bg-gradient-light mb-0 js-btn-prev" type="button" title="Prev">Kembali</button>
-                  <button class="btn btn-success" type="submit" name="status_pelan" value="draf">Draf</button> 
-                  <button class="btn btn-primary" type="submit" name="status_pelan" value="hantar" >Hantar</button> 
+                  <input type="reset" class="btn bg-gradient-light w-auto me-2" value="Reset" >
+                  <button class="btn bg-gradient-info w-auto me-2" type="submit" name="status_pelan" value="draf">Draf</button> 
+                  <button class="btn bg-gradient-success w-auto me-2" type="submit" name="status_pelan" value="hantar" >Hantar</button> 
 
                 </form>
             

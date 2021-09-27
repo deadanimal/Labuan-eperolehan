@@ -31,7 +31,7 @@ class CidbController extends Controller
     public function store(Request $request)
     {
         $cidb = new Cidb();
-
+        $cidb = Cidb::where('id',$request->id_cidb)->first();
         $sijil_perakuan=$request->file('sijil_perakuan')->store('sijil_perakuan');
         $sijil_gred=$request->file('sijil_gred')->store('sijil_gred');
         $cidb->sijil_perakuan=$sijil_perakuan;
@@ -41,6 +41,8 @@ class CidbController extends Controller
         $cidb->tarikh_sah=$request->tarikh_sah;
         $cidb->id_bidangkod=$request->id_bidangkod;
         $cidb->id_pembekal=$request->id_pembekal;
+
+        
 
         $cidb->save();
         return redirect('/pembekal');

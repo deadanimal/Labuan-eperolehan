@@ -24,6 +24,8 @@ Route::resource('/dokumen', DokumenController::class);
 Route::resource('/cidb', CidbController::class);
 Route::resource('/kod',KodController::class);
 
+// Route::post('/cidb/create',[CidbController::class,'store']);
+
 Route::get('/cetakpelan/{id}',[PerancanganController::class,'cetakpelan']);
 
 

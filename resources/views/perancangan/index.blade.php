@@ -2,17 +2,18 @@
 
 @section('content')
 
-  <br><br>
-  
-  <h3>Senarai Perolehan</h3>  
+  <h3>Senarai Perolehan</h3>
         </div>
         <!-- Else bootstrap marketplace -->
+  <br><br>  
+
         <div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7">
           <div class="container border-bottom">
             <div class="row justify-space-between py-2">
               <div class="col-lg-3 me-auto">
               </div>
-              <a href="perancangan/create" style="text-align:right">Cipta Perolehan</a>
+              <a href="perancangan/create" style="text-align:right" class="btn bg-gradient-success w-auto me-2">Cipta Perolehan</a>
+           
               <br><br>
              
               <table width="50%" class="table table-striped">

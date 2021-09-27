@@ -54,6 +54,7 @@ class PembekalController extends Controller
         $pembekal->nama_bank=$request->nama_bank;
         $pembekal->no_akaun=$request->no_akaun;
 
+        $pembekal->no_cbp=$request->no_cbp;
 
         $pembekal->save();
 
@@ -94,9 +95,9 @@ class PembekalController extends Controller
 
     public function edit(Pembekal $pembekal)
     {
-        $pembekal= Pembekal::find($id);
+        $pembekal= Pembekal::all();
         return view('pembekal.edit', [
-            'pembekal'=>$pembekal,]);
+            'pembekal'=>$pembekal]);
     }
 
     public function update(Request $request, Pembekal $pembekal)

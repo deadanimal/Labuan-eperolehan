@@ -71,7 +71,7 @@ class DokumenController extends Controller
 
 
         $dokumen->save();
-        return redirect('/pembekal/create');
+        return redirect('/pembekal');
     }
     /**
      * Display the specified resource.

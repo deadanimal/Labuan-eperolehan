@@ -53,13 +53,13 @@
         <div class="row justify-space-between py-2">
           <div class="col-lg-3 me-auto">
           </div>
-              <form class="form-inline" method="POST" action="/cidb" enctype="multipart/form-data"> 
+              <form class="form-inline" method="POST" action="/cidb/create" enctype="multipart/form-data"> 
                 @csrf
                 <br>
                 <fieldset>
                   <legend>Dokumen yang perlu dilampirkan:</legend>
                   <br><br>
-                  
+                  <input type="hidden" name="id_cidb" value="{{$perancangan->id}}">
                   <div class="col-md-6 ps-md-2">
                     <label>Sijil Perakuan Pendaftaran Kontraktor</label>
                     <div class="input-group mb-2">

@@ -64,35 +64,35 @@
                   <div class="col-md-6 ps-md-2">
                     <label>Sijil dari pihak Kementerian Kewangan Malaysia</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="file" name="sijil_mof" >
+                      <input class="form-control" type="file" name="sijil_mof" required>
                     </div>
                   </div>
 
                   <div class="col-md-6 ps-md-2">
                     <label>Sijil Perbendaharaan Malaysia Sabah</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="file" name="sijil_perbendaharaan">
+                      <input class="form-control" type="file" name="sijil_perbendaharaan" required>
                     </div>
                   </div>
 
                   <div class="col-md-6 ps-md-2">
                     <label>Sijil Bumiputera</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="file" name="sijil_bumiputera">
+                      <input class="form-control" type="file" name="sijil_bumiputera" required>
                     </div>
                   </div>
 
                   <div class="col-md-6 ps-md-2">
                     <label>Sijil Taraf Bumi</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="file" name="sijil_taraf">
+                      <input class="form-control" type="file" name="sijil_taraf" required>
                     </div>
                   </div>
 
                   <div class="col-md-6 ps-md-2">
                     <label>Tarikh Sah Laku</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="date" name="tarikh_sah">
+                      <input class="form-control" type="date" name="tarikh_sah" required>
                     </div>
                   </div>
 
