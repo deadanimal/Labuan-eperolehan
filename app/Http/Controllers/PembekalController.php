@@ -58,19 +58,27 @@ class PembekalController extends Controller
 
         $pembekal->save();
 
-        // TODO
+        // session(['id_pembekal' => '$pembekal->id']);
+        // Session::put('id_pembekal', '$pembekal->id');
 
+            
+        $id_pembekal=$pembekal->id;
+        Session::get($id_pembekal);
   
         if($request->jenis_akaun=='Kerja'){
             return redirect('/cidb/create');
+            Session::put($id_pembekal);
+            dd($id_pembekal);
+
            }
 
         else if($request->jenis_akaun=='Pembekal'){
             return redirect('/dokumen/create');
-        }
+            Session::put($id_pembekal);
+            dd($id_pembekal);
 
-        $id_pembekal=$pembekal->id;
-        Session::get($id_pembekal);
+
+        }
 
  
         return redirect('/pembekal');

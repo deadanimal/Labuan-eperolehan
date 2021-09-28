@@ -23,6 +23,9 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="../../assets/css/soft-design-system.css?v=1.0.5" rel="stylesheet" />
 
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
     <style>
       .currency {
       padding-left:12px;
@@ -138,21 +141,19 @@
                   <a href="/perancangan" class="btn bg-gradient-light w-auto me-2">Kembali</a>
                   <button class="btn bg-gradient-info w-auto me-2" type="submit" name="status_pelan" value="draf">Draf</button> 
                   <button class="btn bg-gradient-primary w-auto me-2" type="submit" name="status_pelan" value="hantar" >Hantar</button> 
-
+      
                   
                 </form>
                 
-                @isset($message)
-                <div class="alert alert-success">
-                <strong>{{$message}}</strong>
-                </div>
-                @endif
-
             </div>
           </div>
          
         </div>
-        <script>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.js">
+     
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
 
         // Jquery Dependency
 
@@ -238,6 +239,14 @@
           caret_pos = updated_len - original_len + caret_pos;
           input[0].setSelectionRange(caret_pos, caret_pos);
         }
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Data telah berjaya dimasukkan.',
+          text: 'Sila tunggu Pegawai Pengesah untuk mengesahkan permohonan anda'
+
+        })
+
 
       </script>
 @stop

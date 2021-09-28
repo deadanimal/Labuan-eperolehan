@@ -25,9 +25,9 @@ class DokumenController extends Controller
 
     public function create(Pembekal $pembekal)
     {
-        Session::get($id_pembekal,$pembekal->id);
-        //Session::get($id_pembekal);
-        dd($id_pembekal);
+        // Session::put($id_pembekal==$pembekal->id);
+        // //Session::get($id_pembekal);
+        // dd($id_pembekal);
 
         $dokumen = Dokumen::all();
         $kod = Kod::all();
@@ -63,30 +63,12 @@ class DokumenController extends Controller
         $dokumen->id_bidangkod=$request->id_bidangkod;
 
         $dokumen->id_pembekal=$request->id_pembekal;      
-        //dd($request->dokumen_sokongan);
-
-        // foreach ($request->dokumen_sokongan as $dokumen) {
-        //     //TODO
-        //     // get dokumen name (getFileName)
-        //     // $path = $dokumen->store('');
-        //     // $dokumen -> path = $path;
-        //     // $dokumen -> save();
-        // }
-
-        //$dokumen = implode(',' $request->file('dokumen_sokongan')->store('dokumen_dokumen');
-
-        //$dokumen->'dokumen_sokongan' = $dokumen;
 
 
         $dokumen->save();
         return redirect('/pembekal');
     }
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Dokumen  $dokumen
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Dokumen $dokumen)
     {
         //

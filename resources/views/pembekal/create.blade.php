@@ -33,7 +33,6 @@
         <form class="form-inline" method="POST" action="/pembekal" name="form-pembekal"> 
           @csrf
           <br><br>
-
           <div class="card-body">
           <div class="mb-4">
             <label>Jenis Akaun</label>
@@ -45,25 +44,142 @@
                 <option value="Kerja">Kerja</option>
               </select>
             </div>
+
+        <fieldset>
+          <legend>Maklumat Perniagaan</legend>
+         
+            <div class="mb-4">
+              <label>Nama Perniagaan</label>
+              <div class="input-group">
+                <input type="text" class="form-control" name="nama_perniagaan">
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label>No Pendaftaran Perniagaan</label>
+              <div class="input-group mb-4">
+                <input class="form-control" type="text" name="no_pendaftaran">
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label>Lokasi Pendaftaran</label>
+              <div class="input-group">
+                <input type="text" class="form-control" name="lokasi">
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label>Email</label>
+              <div class="input-group">
+                <input type="email" class="form-control" name="email" >
+              </div>
+            </div>
+
+          <div class="row">
+              <div class="col-md-6">
+                <label>Tarikh Penubuhan</label>
+                <div class="input-group mb-4">
+                  <input class="form-control" name="tarikh_penubuhan" type="date" >
+                </div>
+              </div>
+
+              <div class="col-md-6 ps-2">
+                <label>No Cukai Pendapatan</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" name="no_cukai">
+                </div>
+              </div>
+            </div>
+
+          <div class="form-group mb-4">
+              <label>Alamat Syarikat</label>
+              <textarea name="alamat" class="form-control" id="alamat" rows="4"></textarea>
           </div>
 
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>No Pendaftaran Perniagaan</label>
-                      <div class="input-group mb-4">
-                        <input class="form-control" type="text" name="no_pendaftaran">
-                      </div>
-                    </div>
+          <div class="row">
+            <div class="col-md-6">
+              <label>Poskod</label>
+              <div class="input-group mb-4">
+                <input class="form-control" name="poskod" type="text" >
+              </div>
+            </div>
 
-                    <div class="col-md-6 ps-2">
+            <div class="col-md-6 ps-2">
+              <label>Negeri</label>
+              <div class="input-group">
+                <select class="form-control" name="negeri">
+                  <option hidden>Sila Pilih</option>
+                  <option value="Johor">Johor</option>
+                  <option value="Kedah">Kedah</option>
+                  <option value="Kelantan">Kelantan</option>
+                  <option value="Kuala Lumpur">Kuala Lumpur</option>
+                  <option value="Labuan">Labuan</option>
+                  <option value="Melaka">Melaka</option>
+                  <option value="Negeri Sembilan">Negeri Sembilan</option>
+                  <option value="Pahang">Pahang</option>
+                  <option value="Penang">Penang</option>
+                  <option value="Perak">Perak</option>
+                  <option value="Perlis">Perlis</option>
+                  <option value="Putrajaya">Putrajaya</option>
+                  <option value="Sabah">Sabah</option>
+                  <option value="Sarawak">Sarawak</option>
+                  <option value="Selangor">Selangor</option>
+                  <option value="Terengganu">Terengganu</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-6 ps-2">
+              <label>Daerah</label>
+              <div class="input-group">
+                <input type="text" class="form-control" name="daerah">
+              </div>
+            </div>
+
+            <div class="col-md-6 ps-2">
+              <label>Bandar</label>
+              <div class="input-group">
+                <input type="text" class="form-control" name="bandar">
+              </div>
+            </div>
+          </div>
+
+            <div class="mb-4">
+              <label>No Telefon</label>
+              <div class="input-group">
+                <input type="text" class="form-control" name="no_tel" >
+              </div>
+            </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <label>No Telefon Pejabat</label>
+            <div class="input-group mb-4">
+              <input class="form-control" type="text" name="no_pejabat">
+            </div>
+          </div>
+
+          <div class="col-md-6 ps-2">
+            <label>No Faks</label>
+            <div class="input-group">
+              <input type="text" class="form-control" name="no_faks" >
+            </div>
+          </div>
+        </div>
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Maklumat Pentadbir </legend>
+
+                    <div class="mb-4">
                       <label>Nama Pemilik</label>
                       <div class="input-group">
                         <input type="text" class="form-control" name="nama_pemilik" >
                       </div>
                     </div>
-                  </div>
-
-                  <div class="mb-4">
+                  
                     <label>Kewarganegaraan</label>
                     <div class="input-group">
                       <input type="text" class="form-control" name="kewarganegaraan">
@@ -82,123 +198,8 @@
                     <div class="input-group">
                       <input type="text" class="form-control" name="kad_pengenalan" >
                     </div>
-                  </div>
-
-                  <div class="mb-4">
-                    <label>Nama Perniagaan</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control" name="nama_perniagaan">
                     </div>
-                  </div>
-
-                  <div class="mb-4">
-                    <label>Lokasi Pendaftaran</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control" name="lokasi">
-                    </div>
-                  </div>
-
-                  <div class="mb-4">
-                    <label>Email</label>
-                    <div class="input-group">
-                      <input type="email" class="form-control" name="email" >
-                    </div>
-                  </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                      <label>Tarikh Penubuhan</label>
-                      <div class="input-group mb-4">
-                        <input class="form-control" name="tarikh_penubuhan" type="date" >
-                      </div>
-                    </div>
-
-                    <div class="col-md-6 ps-2">
-                      <label>No Cukai Pendapatan</label>
-                      <div class="input-group">
-                        <input type="text" class="form-control" name="no_cukai">
-                      </div>
-                    </div>
-                  </div>
-
-                <div class="form-group mb-4">
-                    <label>Alamat Syarikat</label>
-                    <textarea name="alamat" class="form-control" id="alamat" rows="4"></textarea>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-6">
-                    <label>Poskod</label>
-                    <div class="input-group mb-4">
-                      <input class="form-control" name="poskod" type="text" >
-                    </div>
-                  </div>
-
-                  <div class="col-md-6 ps-2">
-                    <label>Negeri</label>
-                    <div class="input-group">
-                      <select class="form-control" name="negeri">
-                        <option hidden>Sila Pilih</option>
-                        <option value="Johor">Johor</option>
-                        <option value="Kedah">Kedah</option>
-                        <option value="Kelantan">Kelantan</option>
-                        <option value="Kuala Lumpur">Kuala Lumpur</option>
-                        <option value="Labuan">Labuan</option>
-                        <option value="Melaka">Melaka</option>
-                        <option value="Negeri Sembilan">Negeri Sembilan</option>
-                        <option value="Pahang">Pahang</option>
-                        <option value="Penang">Penang</option>
-                        <option value="Perak">Perak</option>
-                        <option value="Perlis">Perlis</option>
-                        <option value="Putrajaya">Putrajaya</option>
-                        <option value="Sabah">Sabah</option>
-                        <option value="Sarawak">Sarawak</option>
-                        <option value="Selangor">Selangor</option>
-                        <option value="Terengganu">Terengganu</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6 ps-2">
-                    <label>Daerah</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control" name="daerah">
-                    </div>
-                  </div>
-
-                  <div class="col-md-6 ps-2">
-                    <label>Bandar</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control" name="bandar">
-                    </div>
-                  </div>
-                </div>
-
-                  <div class="mb-4">
-                    <label>No Telefon</label>
-                    <div class="input-group">
-                      <input type="text" class="form-control" name="no_tel" >
-                    </div>
-                  </div>
-
-              <div class="row">
-                <div class="col-md-6">
-                  <label>No Telefon Pejabat</label>
-                  <div class="input-group mb-4">
-                    <input class="form-control" type="text" name="no_pejabat">
-                  </div>
-                </div>
-
-                <div class="col-md-6 ps-2">
-                  <label>No Faks</label>
-                  <div class="input-group">
-                    <input type="text" class="form-control" name="no_faks" >
-                  </div>
-                </div>
-              </div>
-
-            </fieldset>
-
+                </fieldset>
             <fieldset>
               <h6>Maklumat Bank</h6>
 
