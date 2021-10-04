@@ -56,8 +56,14 @@ class PembekalController extends Controller
         $pembekal->no_faks=$request->no_faks;
         $pembekal->nama_bank=$request->nama_bank;
         $pembekal->no_akaun=$request->no_akaun;
+        
 
-        $pembekal->jenis_akaun = implode("|" ,$request->jenis_akaun);
+        if(!empty($request->jenis_akaun)){
+            $pembekal->jenis_akaun = implode("|" ,$request->jenis_akaun);
+        }else{
+            $pembekal->jenis_akaun = "Akaun Asas";
+        }
+    
 
         $pembekal->sijil_ssm=$sijil_ssm;
         $pembekal->lesen_perniagaan=$lesen_perniagaan;
@@ -70,29 +76,44 @@ class PembekalController extends Controller
   
         $pembekal->save();
 
-      //dd($request->jenis_akaun);     
+        if (!is_null($request->jenis_akaun)) {
+            if (in_array('Kerja', $request->jenis_akaun) && in_array('Bekalan & Perkhidmatan(MOF)', $request->jenis_akaun)) {
+                return redirect('/insertfile');
+            } elseif (in_array('Kerja', $request->jenis_akaun)) {
+                return redirect('/cidb/create');
+            } elseif (in_array('Bekalan & Perkhidmatan(MOF)', $request->jenis_akaun)) {
+                return redirect('/dokumen/create');
+            } else {
+                return redirect('/pembekal');
+            }
+        }else{
+            return redirect('/pembekal');
+        }
 
-        if ($request->jenis_akaun=='Kerja'){
+        /*
+       // if ($request->jenis_akaun=='Kerja')
+        if(in_array($request->jenis_akaun,'Kerja'){
             //dd($request->jenis_akaun);     
             return redirect('/cidb/create');
 
         }
-        else if($request->jenis_akaun=='Bekalan&Perkhidmatan(MOF)'){
-            dd($request->jenis_akaun);     
-            
-            return redirect('/dokumen/create');
+        else if($request->jenis_akaun='Bekalan & Perkhidmatan(MOF)' && $request->jenis_akaun='Kerja'){
+         if(in_array($request->jenis_akaun,'something')){
 
-        }
-        else if($request->jenis_akaun='Bekalan&Perkhidmatan(MOF)'&&'Kerja'){
-         
+         }
            // $pembekal->jenis_akaun = implode("," ,$request->jenis_akaun);
             //dd($pembekal->jenis_akaun);
             return redirect ('/insertfile');
         }
-        
+        else if($request->jenis_akaun=='Bekalan & Perkhidmatan(MOF)'){ 
+            
+            return redirect('/dokumen/create');
+
+        }
         else{
             return redirect('/pembekal');
         }
+        */
 
     }
 

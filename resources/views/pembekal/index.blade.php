@@ -21,7 +21,6 @@
              
               <table id="example" class="stripe" style="width:50%">
                 <tr>
-
                   <th>Jenis Pembekal</th>
                   <th>Nama Syarikat</th>
                   <th>No Pendaftaran Syarikat</th>
@@ -30,13 +29,12 @@
 
                 @foreach($pembekal as $pembekal)
                 <tr>
-                 
                   <td>{{$pembekal->jenis_akaun}}</td>
                   <td>{{$pembekal->nama_perniagaan}}</td>
                   <td>{{$pembekal->no_pendaftaran}}</td>
                   <td><a href="/pembekal/{{$pembekal->id}}/edit"><img src="/edit_icon.png" width=15px;></a></td>
                   @endforeach
-              </tr>
+                </tr>
 
               </table>
 

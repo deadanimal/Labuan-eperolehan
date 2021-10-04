@@ -43,8 +43,6 @@
 
 
 <body class="features-sections">
-
-  <h5>Pendaftaran Pembekal: Dokumen Sokongan (CIDB)</h5>
     </div>
     <!-- Else bootstrap marketplace -->
     <div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7">
@@ -93,12 +91,9 @@
                         <input class="form-control" type="date" name="tarikh_sah" required>
                       </div>
                     </div>
-
-
-                  <legend>Pendaftaran Pembekal- Akaun MOF</legend>
-                  <h6> Dokumen yang perlu dilampirkan</h6> 
-                  <br><br>
                   
+                  <fieldset>
+
                   <div class="col-md-6 ps-md-2">
                     <label>Sijil dari pihak Kementerian Kewangan Malaysia</label>
                     <div class="input-group mb-2">
