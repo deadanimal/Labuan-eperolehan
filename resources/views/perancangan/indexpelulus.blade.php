@@ -18,7 +18,6 @@
               <table width="50%" class="table table-striped">
                 
                 <tr>
-                  <th>Bil</th>
                   <th>Tahun Perolehan</th>
                   <th>Nama Perolehan</th>
                   <th>Kategori Perolehan</th>
@@ -28,7 +27,6 @@
 
                 @foreach($perancangan as $perancangan)
                 <tr>
-                  <td>{{$perancangan->id}}</td>
                   <td>{{$perancangan->tahun_pelan}}</td>
                   <td><a href="/editpelulus/{{$perancangan->id}}">{{$perancangan->tajuk}}</a></td>
                   <td>{{$perancangan->kategori}}</td>

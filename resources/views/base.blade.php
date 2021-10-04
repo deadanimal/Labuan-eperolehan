@@ -19,11 +19,26 @@
   <link href="/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="/assets/css/soft-design-system.css?v=1.0.5" rel="stylesheet" />
+  
   <style>
 
     table{
       text-transform: capitalize;
     }
+
+      .previous {
+        text-decoration: none;
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #f1f1f1;
+        color: black;
+      }
+
+      .round {
+        border-radius: 50%;
+      }
+
+
     </style>
 </head>
 
@@ -1039,6 +1054,11 @@
         console.error(countUp2.error);
       };
     }
+
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+
   </script>
 </body>
 

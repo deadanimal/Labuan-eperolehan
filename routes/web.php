@@ -28,6 +28,10 @@ Route::resource('/kod',KodController::class);
 
 Route::get('/cetakpelan/{id}',[PerancanganController::class,'cetakpelan']);
 
+Route::post('/dokumentambahan',[PembekalController::class,'dokumentambahan']);
+Route::get('/insertfile',[PembekalController::class,'insertfile']);
+
+
 
 Route::get('/indexpengesah', [PerancanganController::class,'indexpengesah']);
 Route::get('/editpengesah/{id}', [PerancanganController::class,'editpengesah']);
@@ -44,7 +48,7 @@ Route::get('/', function () {
 });
 
 Route::get('/2', function () {
-    return view('base');
+    return view('main');
 });
 
 Route::get('/3', function () {

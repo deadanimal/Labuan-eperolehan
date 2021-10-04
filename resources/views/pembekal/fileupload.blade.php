@@ -13,7 +13,6 @@
       ePerolehan
     </title>
 
-    
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Nucleo Icons -->
@@ -44,8 +43,8 @@
 
 
 <body class="features-sections">
-<a href="/kod" class="previous round">&#8249;</a>
-<br><br>
+
+  <h5>Pendaftaran Pembekal: Dokumen Sokongan (CIDB)</h5>
     </div>
     <!-- Else bootstrap marketplace -->
     <div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7">
@@ -53,10 +52,49 @@
         <div class="row justify-space-between py-2">
           <div class="col-lg-3 me-auto">
           </div>
-              <form class="form-inline" method="POST" action="/dokumen" enctype="multipart/form-data"> 
+              <form  method="POST" action="/dokumentambahan" enctype="multipart/form-data"> 
                 @csrf
+                {{-- @method('PUT') --}}
                 <br>
-        
+                <fieldset>
+                  <legend>Dokumen yang perlu dilampirkan:</legend>
+                  <br><br>
+       
+                  <div class="col-md-6 ps-md-2">
+                    <label>Sijil Perakuan Pendaftaran Kontraktor</label>
+                    <div class="input-group mb-2">
+                      <input class="form-control" type="file" name="sijil_perakuan" required>
+                    </div>
+                  </div>
+                
+                  <div class="col-md-6 ps-md-2">
+                    <label>Sijil Gred CIDB</label>
+                    <div class="input-group mb-2">
+                      <input class="form-control" type="file" name="sijil_gred" required>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 ps-md-2">
+                    <label>Kod Bidang</label>
+                    <div class="input-group mb-2">
+                      <select class="form-control" name="id_bidangkod" required>
+                        <option hidden>Sila Pilih</option>
+                        @foreach($kod as  $kod)
+                        {{-- <optgroup label="{{$kod->kategori_kod}}"></optgroup> --}}
+                           <option value="{{$kod->id}}">{{$kod->pengkhususan_kod}}-{{$kod->deskripsi_kod}}</option>
+                          @endforeach 
+                        
+                      </select>
+                    </div>
+
+                    <div class="col-md-6 ps-md-2">
+                      <label>Tarikh Sah Laku Sijil</label>
+                      <div class="input-group mb-2">
+                        <input class="form-control" type="date" name="tarikh_sah" required>
+                      </div>
+                    </div>
+
+
                   <legend>Pendaftaran Pembekal- Akaun MOF</legend>
                   <h6> Dokumen yang perlu dilampirkan</h6> 
                   <br><br>
@@ -96,7 +134,7 @@
                     </div>
                   </div>
 
-                  <div class="col-md-6 ps-md-2">
+                  {{-- <div class="col-md-6 ps-md-2">
                     <label>Kod Bidang</label>
                     <div class="input-group mb-2">
                       <select class="form-control" name="id_bidangkod">
@@ -105,11 +143,12 @@
                         <optgroup label="{{$kod->kategori_kod}}">
                            <option value="{{$kod->id}}">{{$kod->pengkhususan_kod}}-{{$kod->deskripsi_kod}}</option>
                           @endforeach 
-                        </select>
+                        </select> --}}
 
-                    </div>
-                  </div>
 
+                </fieldset>
+                <br><br><br>
+                
                   <br><br>
                   {{-- <button type="submit" class="btn btn-primary" style="margin:5px; float:">Hantar</button>  
                   <button type="reset"  class="btn btn-primary"  style="margin:5px; float:right">Hapus</button> --}}

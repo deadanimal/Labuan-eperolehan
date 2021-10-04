@@ -63,28 +63,28 @@
                   <div class="col-md-6 ps-md-2">
                     <label>Jenis Kod</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="text" name="jenis_kod" style="text-transform: capitalize;" >
+                      <input class="form-control" type="text" name="jenis_kod" style="text-transform: capitalize;" required>
                     </div>
                   </div>
 
                   <div class="col-md-6 ps-md-2">
                     <label>Kategori Kod</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="text" name="kategori_kod" style="text-transform: capitalize;">
+                      <input class="form-control" type="text" name="kategori_kod" style="text-transform: capitalize;" required>
                     </div>
                   </div>
 
                   <div class="col-md-6 ps-md-2">
                     <label>Pengkhususan Kod</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="text" name="pengkhususan_kod" maxlength="6" style="text-transform: capitalize;">
+                      <input class="form-control" type="text" name="pengkhususan_kod" maxlength="6" style="text-transform: capitalize;" required>
                     </div>
                   </div>
 
                   <div class="col-md-6 ps-md-2">
                     <label>Deskripsi Kod</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="text" name="deskripsi_kod" style="text-transform: capitalize;">
+                      <input class="form-control" type="text" name="deskripsi_kod" style="text-transform: capitalize;" required>
                     </div>
                   </div>
 

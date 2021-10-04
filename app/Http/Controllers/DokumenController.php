@@ -38,9 +38,8 @@ class DokumenController extends Controller
     }
 
     public function store(Request $request)
-    {
-        //$id_pembekal = Session::put('id_pembekal');
 
+    {
         $dokumen = new Dokumen();
 
         $sijil_mof=$request->file('sijil_mof')->store('sijil_mof');
@@ -62,10 +61,18 @@ class DokumenController extends Controller
         $dokumen->salinan_kelulusan=$request->salinan_kelulusan;
         $dokumen->id_bidangkod=$request->id_bidangkod;
 
-        $dokumen->id_pembekal=$request->id_pembekal;      
 
+        $temp = Session::get('id_pembekal');
+        $dokumen->id_pembekal=$temp;
+      
+        //$dokumen->id_pembekal=$temp;
+
+        //$dokumen->id_pembekal=$request->id_pembekal;      
 
         $dokumen->save();
+
+
+
         return redirect('/pembekal');
     }
 

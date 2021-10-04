@@ -29,7 +29,7 @@ class PerancanganController extends Controller
         $perancangan = new Perancangan();
 
         $perancangan->tahun_pelan=$request->tahun_pelan;
-        $perancangan->tajuk=$request->tajuk;
+        $perancangan->tajuk_perolehan=$request->tajuk_perolehan;
         $perancangan->perihal=$request->perihal;
         $perancangan->kategori=$request->kategori;
         $perancangan->kaedah=$request->kaedah;
@@ -39,7 +39,14 @@ class PerancanganController extends Controller
         $perancangan->pelulus=$request->pelulus;
 
         //$perancangan->status="Menunggu pengesahan";
+        
+        // $request->validate(
+        //     [
+        //         'sijil_ssm'=>'mimes:pdf|max:20000',
+        //         'lesen_perniagaan'=>'mimes:pdf|max:20000'
 
+        //     ]
+        //     );
        
         if ($request->status_pelan=="hantar"){
             $perancangan->status="Menunggu Pengesahan";
@@ -73,7 +80,7 @@ class PerancanganController extends Controller
     {
         
         $perancangan->tahun_pelan=$request->tahun_pelan;
-        $perancangan->tajuk=$request->tajuk;
+        $perancangan->tajuk_perolehan=$request->tajuk_perolehan;
         $perancangan->perihal=$request->perihal;
         $perancangan->kategori=$request->kategori;
         $perancangan->kaedah=$request->kaedah;
@@ -114,7 +121,7 @@ class PerancanganController extends Controller
 
 
         $perancangan->tahun_pelan=$request->tahun_pelan;
-        $perancangan->tajuk=$request->tajuk;
+        $perancangan->tajuk_perolehan_perolehan=$request->tajuk_perolehan_perolehan;
         $perancangan->perihal=$request->perihal;
         $perancangan->kategori=$request->kategori;
         $perancangan->kaedah=$request->kaedah;
@@ -136,7 +143,7 @@ class PerancanganController extends Controller
     public function indexpelulus()
     {
     
-        $perancangan = Perancangan::where('status','Menunggu Kelulusan')->get();
+        $perancangan = Perancangan::where('status','Diluluskan')->get();
         return view('perancangan.indexpelulus', [
             'perancangan' => $perancangan
         ]);
@@ -158,7 +165,7 @@ class PerancanganController extends Controller
         $perancangan = Perancangan::where('id',$request->perancangan_id)->first();
 
         $perancangan->tahun_pelan=$request->tahun_pelan;
-        $perancangan->tajuk=$request->tajuk;
+        $perancangan->tajuk_perolehan=$request->tajuk_perolehan;
         $perancangan->perihal=$request->perihal;
         $perancangan->kategori=$request->kategori;
         $perancangan->kaedah=$request->kaedah;
@@ -180,13 +187,11 @@ class PerancanganController extends Controller
     {
         // dd($id);
         $perancangan= Perancangan::find($id);
-        $perancangan->status = "Diluluskan";
         $perancangan->save();
-
 
         $pdf = PDF::loadView('pdf.cetakpelan', [
             'perancangan' => $perancangan]);
-            return $pdf->download($perancangan->tajuk.'.pdf');
+            return $pdf->download($perancangan->tajuk_perolehan.'pdf');
     }
 
 

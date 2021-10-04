@@ -5,6 +5,10 @@
   
   <h3>Senarai Pembekal</h3> 
   <br><br>
+    <head>
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+      <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script> 
+    </head>
 
         </div>
         <!-- Else bootstrap marketplace-->
@@ -15,21 +19,22 @@
               </div>
               <br><br>
              
-              <table width="50%" class="table table-striped">
-                
+              <table id="example" class="stripe" style="width:50%">
                 <tr>
-                  <th>Bil</th>
+
                   <th>Jenis Pembekal</th>
-                  <th>Nama Perniagaan</th>
-                  <th>No Pendaftaran Perniagaan</th>
+                  <th>Nama Syarikat</th>
+                  <th>No Pendaftaran Syarikat</th>
+                  <th>Tindakan</th>
                 </tr>
 
                 @foreach($pembekal as $pembekal)
                 <tr>
-                  <td>{{$pembekal->id}}</td>
+                 
                   <td>{{$pembekal->jenis_akaun}}</td>
-                  <td><a href="/pembekal/{{$pembekal->id}}/edit">{{$pembekal->nama_perniagaan}}</a></td>
+                  <td>{{$pembekal->nama_perniagaan}}</td>
                   <td>{{$pembekal->no_pendaftaran}}</td>
+                  <td><a href="/pembekal/{{$pembekal->id}}/edit"><img src="/edit_icon.png" width=15px;></a></td>
                   @endforeach
               </tr>
 
@@ -42,6 +47,11 @@
             </div>
           </div>
         </div>
+        <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+        </script>
 @stop
 
 

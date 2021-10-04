@@ -15,16 +15,19 @@ class CreateDokumensTable extends Migration
     {
         Schema::create('dokumens', function (Blueprint $table) {
             $table->id();
+            $table->String('no_sijil_mof')->nullable();
+            $table->String('no_rujukan_pendaftaran')->nullable();
+            $table->integer('tempoh_sah_laku')->nullable();
+            $table->String('staff_ic')->nullable();
+            $table->String('staff_nama')->nullable();
+            $table->String('staff_jawatan')->nullable();
+
+    
             $table->String('sijil_mof')->nullable();
-            $table->String('sijil_perbendaharaan')->nullable();
-            $table->String('sijil_bumiputera')->nullable();
-            $table->String('sijil_taraf')->nullable();
-            $table->date('tarikh_sah')->nullable();
-            $table->String('rangkaian_perniagaan')->nullable();
-            $table->String('no_pendaftaran_cbp')->nullable();
-            $table->date('tarikh_kuatkuasa')->nullable();
-            $table->date('tarikh_tamat')->nullable();
-            $table->String('salinan_kelulusan')->nullable();
+            $table->String('sijil_perakuan_bumiputera')->nullable();
+            $table->String('sijil_pendaftaran_syarikat')->nullable();
+            $table->String('sijil_taraf_bumi')->nullable();
+            $table->date('tarikh_sah')->nullable();    
             $table->foreignId('id_pembekal')->nullable();
             $table->foreignId('id_bidangkod')->nullable();
             $table->timestamps();

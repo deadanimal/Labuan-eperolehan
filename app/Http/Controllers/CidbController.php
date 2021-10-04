@@ -6,7 +6,7 @@ use App\Models\Cidb;
 use App\Models\Kod;
 use App\Models\Pembekal;
 use Illuminate\Http\Request;
-
+use Session;
 
 class CidbController extends Controller
 {
@@ -40,11 +40,15 @@ class CidbController extends Controller
         $cidb->tarikh_sah=$request->tarikh_sah;
         $cidb->id_bidangkod=$request->id_bidangkod;
         
-        $cidb->id_pembekal=$request->id_pembekal;
-
-        
+       
+        $temp = Session::get('id_pembekal');
+        $cidb->id_pembekal=$temp;
+        //dd($temp);
 
         $cidb->save();
+
+       
+
         return redirect('/pembekal');
 
     }

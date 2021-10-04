@@ -2,6 +2,12 @@
 
 @section('content')
 
+<head>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css"></script>
+
+</head>
+
   <h3>Senarai Perolehan</h3>
         </div>
         <!-- Else bootstrap marketplace -->
@@ -16,32 +22,31 @@
            
               <br><br>
              
-              <table width="50%" class="table table-striped">
-                
-                <tr>
-                  <th>Bil</th>
-                  <th>Tahun Perolehan</th>
-                  <th>Nama Perolehan</th>
-                  <th>Kategori Perolehan</th>
-                  <th>Status</th>
-                  <th>Tindakan</th>
-                </tr>
+              <table width="50%" class="stripe" id="example">
+                <thead>
+                  <tr>
+                    <th>Tahun Perolehan</th>
+                    <th>Nama Perolehan</th>
+                    <th>Kategori Perolehan</th>
+                    <th>Status</th>
+                    <th colspan="2">Tindakan</th>
+                  </tr>
+                </thead>
 
                 @foreach($perancangan as $perancangan)
-                <tr>
-                  <td>{{$perancangan->id}}</td>
-                  <td>{{$perancangan->tahun_pelan}}</td>
-                  <td><a href="/perancangan/{{$perancangan->id}}/edit">{{$perancangan->tajuk}}</a></td>
-                  <td>{{$perancangan->kategori}}</td>
-                  <td>{{$perancangan->status}}</td>
-                  <td><a href="/cetakpelan/{{$perancangan->id}}">Cetak</a>
-                  @endforeach
-              </tr>
+                <tbody>
+                  <tr>
+                    <td>{{$perancangan->tahun_pelan}}</td>
+                    <td>{{$perancangan->tajuk}}</td>
+                    <td>{{$perancangan->kategori}}</td>
+                    <td>{{$perancangan->status}}</td>
+                    <td><a href="/cetakpelan/{{$perancangan->id}}">Cetak</a></td>
+                    <td><a href="/perancangan/{{$perancangan->id}}/edit"><img src="/edit_icon.png" width=15px;></td>
+                    @endforeach
+                </tr>
+                </tbody>
 
               </table>
-
-          
-
             </div>
           </div>
   

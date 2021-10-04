@@ -41,7 +41,7 @@
   </head>
 
 <body class="features-sections">
-<a href="/perancangan">Kembali</a>
+<a href="/perancangan" class="previous round">&#8249;</a>
 <br><br>
   <h3>Cipta Pelan</h3>
 
@@ -63,14 +63,14 @@
                   <div class="col-md-3">
                     <label>Tahun Perancangan:</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="month" name="tahun_pelan">
+                      <input class="form-control" type="number" name="tahun_pelan" placeholder="2021" maxlength="4">
                     </div>
                   </div>
                 </div>
                 
                     <label>Tajuk Pelan</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" name="tajuk">
+                      <input type="text" class="form-control" name="tajuk_perolehan">
                     </div>
                   </div>
      

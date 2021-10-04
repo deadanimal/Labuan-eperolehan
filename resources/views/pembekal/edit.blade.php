@@ -17,7 +17,7 @@
   </head>
   
 <body class="features-sections">
-<a href="/pembekal">Kembali</a>
+<a href="/pembekal" class="previous round">&#8249;</a>
 
   <h3>Pendaftaran Pembekal</h3>
 </div>
@@ -44,11 +44,12 @@
                 
                   <div class="row">
                     <div class="col-md-6">
-                      <label>No Pendaftaran Perniagaan</label>
+                      <label>No Pendaftaran Syarikat</label>
                       <div class="input-group mb-4">
                         <input class="form-control" type="text" name="no_pendaftaran" value="{{$pembekal->no_pendaftaran}}">
                       </div>
                     </div>
+
                     <div class="col-md-6 ps-2">
                       <label>Nama Pemilik</label>
                       <div class="input-group">
@@ -79,7 +80,7 @@
                   </div>
 
                   <div class="mb-4">
-                    <label>Nama Perniagaan</label>
+                    <label>Nama Syarikat</label>
                     <div class="input-group">
                       <input type="text" class="form-control" name="nama_perniagaan" value="{{$pembekal->nama_perniagaan}}">
                     </div>
@@ -88,7 +89,25 @@
                   <div class="mb-4">
                     <label>Lokasi Pendaftaran</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" name="lokasi" value="{{$pembekal->lokasi}}">
+                      <select name="lokasi" class="form-control">
+                      <option hidden="Sila Pilih"></option>
+                      <option @if ($pembekal->lokasi=="Johor") selected @endif value="Johor">Johor</option>
+                      <option @if ($pembekal->lokasi=="Selangor") @endif value="Selangor">Selangor</option>
+                      <option @if ($pembekal->lokasi=="Kedah")selected   @endif value="Kedah">Kedah</option>
+                      <option @if ($pembekal->lokasi=="Kelantan") selected @endif value="Kelantan">Kelantan</option>
+                      <option @if ($pembekal->lokasi=="Kuala Lumpur" ) selected @endif value="Kuala Lumpur">Kuala Lumpur</option>
+                      <option @if ($pembekal->lokasi=="Labuan") selected @endif value="Labuan">Labuan</option>
+                      <option @if ($pembekal->lokasi=="Melaka")selected @endif value="Melaka">Melaka</option>
+                      <option @if ($pembekal->lokasi=="Negeri Sembilan")selected  @endif value="Negeri Sembilan">Negeri Sembilan</option>
+                      <option @if ($pembekal->lokasi=="Pahang")selected @endif value="Pahang">Pahang</option>
+                      <option @if ($pembekal->lokasi=="Pulau Pinang")selected @endif value="Pulau Pinang">Pulau Pinang</option>
+                      <option @if ($pembekal->lokasi=="Perak") selected @endif value="Perak">Perak</option>
+                      <option @if ($pembekal->lokasi=="Perlis")@endif value="Perlis">Perlis</option>
+                      <option @if ($pembekal->lokasi=="Putrajaya") @endif value="Putrajaya">Putrajaya</option>
+                      <option @if ($pembekal->lokasi=="Sabah") @endif value="Sabah">Sabah</option>
+                      <option @if ($pembekal->lokasi=="Sarawak") @endif value="Sarawak">Sarawak</option>
+                      <option @if ($pembekal->lokasi=="Terengganu")@endif value="Terengganu">Terengganu</option>
+                  </select>
                     </div>
                   </div>
 
@@ -131,7 +150,24 @@
                   <div class="col-md-6 ps-2">
                     <label>Negeri</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" name="negeri" value="{{$pembekal->negeri}}">
+                    <select name="negeri" class="form-control">
+                      <option @if ($pembekal->negeri=="Johor") selected @endif value="Johor">Johor</option>
+                      <option @if ($pembekal->negeri=="Selangor") @endif value="Selangor">Selangor</option>
+                      <option @if ($pembekal->negeri=="Kedah")selected   @endif value="Kedah">Kedah</option>
+                      <option @if ($pembekal->negeri=="Kelantan") selected @endif value="Kelantan">Kelantan</option>
+                      <option @if ($pembekal->negeri=="Kuala Lumpur") selected @endif value="Kuala Lumpur">Kuala Lumpur</option>
+                      <option @if ($pembekal->negeri=="Labuan") selected @endif value="Labuan">Labuan</option>
+                      <option @if ($pembekal->negeri=="Melaka")selected @endif value="Melaka">Melaka</option>
+                      <option @if ($pembekal->negeri=="Negeri Sembilan")selected  @endif value="Negeri Sembilan">Negeri Sembilan</option>
+                      <option @if ($pembekal->negeri=="Pahang")selected @endif value="Pahang">Pahang</option>
+                      <option @if ($pembekal->negeri=="Pulau Pinang")selected @endif value="Pulau Pinang">Pulau Pinang</option>
+                      <option @if ($pembekal->negeri=="Perak") selected @endif value="Perak">Perak</option>
+                      <option @if ($pembekal->negeri=="Perlis")@endif value="Perlis">Perlis</option>
+                      <option @if ($pembekal->negeri=="Putrajaya") @endif value="Putrajaya">Putrajaya</option>
+                      <option @if ($pembekal->negeri=="Sabah") @endif value="Sabah">Sabah</option>
+                      <option @if ($pembekal->negeri=="Sarawak") @endif value="Sarawak">Sarawak</option>
+                      <option @if ($pembekal->negeri=="Terengganu")@endif value="Terengganu">Terengganu</option>
+                    </select>
                     </div>
                   </div>
 
@@ -151,7 +187,7 @@
                 </div>
 
                   <div class="mb-4">
-                    <label>No Telefon</label>
+                    <label>No Telefon Bimbit</label>
                     <div class="input-group">
                       <input type="text" class="form-control" name="no_tel" value="{{$pembekal->no_tel}}">
                     </div>
@@ -159,7 +195,7 @@
 
               <div class="row">
                 <div class="col-md-6">
-                  <label>No Telefon Pejabat</label>
+                  <label>No Telefon Bimbit Pejabat</label>
                   <div class="input-group mb-4">
                     <input class="form-control" type="text" name="no_pejabat" value="{{$pembekal->no_pejabat}}">
                   </div>

@@ -58,8 +58,6 @@ class KodController extends Controller
         $kod->deskripsi_kod=$request->deskripsi_kod;
 
         $kod->save();
-
-        $url = '/kod/'.$kod->id;
         return redirect('/kod');
     }
 

@@ -15,7 +15,12 @@ class CreateCidbsTable extends Migration
     {
         Schema::create('cidbs', function (Blueprint $table) {
             $table->id();
-            $table->String('sijil_perakuan')->nullable();
+            $table->String('no_pendaftaran_ppk')->nullable();
+            $table->date('tarikh_sah_laku')->nullable();
+            $table->integer('tempoh_sah_laku')->nullable();
+            $table->String('pengkhususan')->nullable();
+            $table->String('pegawai_bertauliah')->nullable();
+
             $table->String('sijil_gred')->nullable();
             $table->Date('tarikh_sah')->nullable();
             $table->foreignId('id_pembekal')->nullable();

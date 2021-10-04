@@ -131,6 +131,7 @@
                   <option hidden>Sila Pilih</option>
                   <option value="Diluluskan">Diluluskan</option>
                   <option value="Semak semula">Semak Semula</option>
+                  <option value="Dibatalkan">Dibatalkan</option>
                 </select>
                   <br><br>
                   {{-- <button type="submit" class="btn btn-primary" style="margin:5px; float:">Hantar</button>  

@@ -18,20 +18,23 @@
               <table width="50%" class="table table-striped">
                 
                 <tr>
-                  <th>Bil</th>
+                 
                   <th>Tahun Perolehan</th>
                   <th>Nama Perolehan</th>
                   <th>Kategori Perolehan</th>
                   <th>Status</th>
+                  <th>Tindakan</th>
                 </tr>
 
                 @foreach($perancangan as $perancangans)
                 <tr>
-                  <td>{{$perancangans->id}}</td>
+          
                   <td>{{$perancangans->tahun_pelan}}</td>
-                  <td><a href="/editpengesah/{{$perancangans->id}}">{{$perancangans->tajuk}}</a></td>
+                  <td>{{$perancangans->tajuk}}</a></td>
                   <td>{{$perancangans->kategori}}</td>
                   <td>{{$perancangans->status}}</td>
+                  <td><a href="/editpengesah/{{$perancangans->id}}"><img src="/edit_icon.png" width=15px;></td>
+
                   @endforeach
               </tr>
 

@@ -14,6 +14,7 @@ class CreatePembekalsTable extends Migration
     public function up()
     {
         Schema::create('pembekals', function (Blueprint $table) {
+            
             $table->id();
             $table->String("jenis_akaun")->nullable();
             $table->String("no_pendaftaran")->nullable();
@@ -32,14 +33,18 @@ class CreatePembekalsTable extends Migration
             $table->String("no_tel")->nullable();
             $table->String("no_pejabat")->nullable();
             $table->String("no_faks")->nullable();
+
+            $table->String('sijil_ssm')->nullable();
+            $table->String('lesen_perniagaan')->nullable();
        
             $table->String("lokasi")->nullable();
             $table->String("email")->nullable();
-      
-           
-  
+    
+        
             $table->String("nama_bank")->nullable();
             $table->String("no_akaun")->nullable();
+
+
            
             $table->timestamps();
         });
