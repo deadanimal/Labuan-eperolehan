@@ -3,23 +3,20 @@
 @section('content')
 
   
-  <h3>Senarai Pembekal</h3> 
-  <br><br>
-    <head>
-      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
-      <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script> 
-    </head>
+<h3>Senarai Pembekal Berdaftar</h3>
+</div>
+<!-- Else bootstrap marketplace -->
+<br><br>  
 
-        </div>
-        <!-- Else bootstrap marketplace-->
-        <div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7">
-          <div class="container border-bottom">
-            <div class="row justify-space-between py-2">
-              <div class="col-lg-3 me-auto">
-              </div>
-              <br><br>
-             
-              <table id="example" class="stripe" style="width:50%">
+<div class="position-relative border-radius-xl overflow-hidden shadow-lg mb-7">
+  <div class="container border-bottom">
+    <div class="row justify-space-between py-2">
+      <div class="col-lg-3 me-auto">
+      </div>
+
+      <br><br>
+
+              <table style="width:100%">
                 <tr>
                   <th>Jenis Pembekal</th>
                   <th>Nama Syarikat</th>

@@ -52,7 +52,7 @@
                   <div class="col-md-6 ps-md-2">
                     <label>Tajuk Pelan:</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" style="width:500px;" name="tajuk" value="{{$perancangan->tajuk}}"> 
+                      <input type="text" class="form-control" style="width:500px;" name="tajuk" value="{{$perancangan->tajuk_perolehan}}"> 
                     </div>
                   </div>
                 </div>
