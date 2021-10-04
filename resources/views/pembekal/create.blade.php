@@ -49,14 +49,14 @@
             <div class="mb-4">
             <label>Nama Syarikat</label><span class="required">*</span>
               <div class="input-group">
-                <input type="text" class="form-control" name="nama_perniagaan"  >
+                <input type="text" required class="form-control" name="nama_perniagaan"  >
               </div>
             </div>
 
             <div class="mb-4">
               <label>No Pendaftaran Syarikat</label><span class="required">*</span>
               <div class="input-group mb-4">
-                <input class="form-control" type="text" name="no_pendaftaran" style="width:20%" >
+                <input class="form-control" type="text"  required name="no_pendaftaran" style="width:20%" >
               </div>
             </div>
 
@@ -64,7 +64,7 @@
               <div class="col-md-6">
                 <label>Sijil SSM</label><span class="required">*</span>
                 <div class="input-group mb-4">
-                  <input class="form-control" name="sijil_ssm" type="file">
+                  <input class="form-control" name="sijil_ssm" type="file" required>
                 </div>
               </div>
 
@@ -80,7 +80,7 @@
             <div class="mb-4">
               <label>Lokasi Pendaftaran</label> <span class="required">*</span>
               <div class="input-group">
-                <select class="form-control" name="lokasi" >
+                <select class="form-control" name="lokasi" required >
                   <option hidden>Sila Pilih</option>
                   <option value="Johor">Johor</option>
                   <option value="Kedah">Kedah</option>
@@ -106,7 +106,7 @@
               <div class="col-md-6">
                 <label>Tarikh Penubuhan</label> <span class="required">*</span>
                 <div class="input-group mb-4">
-                  <input class="form-control" name="tarikh_penubuhan" type="date" >
+                  <input class="form-control" name="tarikh_penubuhan" type="date"  required>
                 </div>
               </div>
 
@@ -120,15 +120,15 @@
 
           <div class="form-group mb-4">
               <label>Alamat Syarikat</label> <span class="required">*</span>
-              <textarea name="alamat" class="form-control" id="alamat" rows="4" cols="2" ></textarea>
-              {{-- <input type="text" name="alamat" class="form-control"> --}}
+              <textarea name="alamat" class="form-control" id="alamat" rows="4" cols="2" required></textarea>
+              {{-- <input type="text" requiredname="alamat" class="form-control"> --}}
           </div>
 
           <div class="row">
             <div class="col-md-6">
               <label>Poskod</label> <span class="required">*</span>
               <div class="input-group mb-4">
-                <input class="form-control" name="poskod" type="text" >
+                <input class="form-control" name="poskod" type="text" required>
               </div>
             </div>
            
@@ -136,7 +136,7 @@
             <div class="col-md-6 ps-2">
               <label>Negeri</label> <span class="required">*</span>
               <div class="input-group">
-                <select class="form-control" name="negeri">
+                <select class="form-control" name="negeri" required>
                   <option hidden>Sila Pilih</option>
                   <option value="Johor">Johor</option>
                   <option value="Kedah">Kedah</option>
@@ -161,14 +161,14 @@
             <div class="col-md-6 ps-2">
               <label>Daerah</label> <span class="required">*</span>
               <div class="input-group">
-                <input type="text" class="form-control" name="daerah" >
+                <input type="text" required class="form-control" name="daerah" >
               </div>
             </div>
 
             <div class="col-md-6 ps-2">
               <label>Bandar</label> <span class="required">*</span>
               <div class="input-group">
-                <input type="text" class="form-control" name="bandar" >
+                <input type="text" required class="form-control" name="bandar" >
               </div>
             </div>
           </div>
@@ -176,7 +176,7 @@
           <div class="mb-4">
             <label>No Telefon Bimbit</label> <span class="required">*</span>
             <div class="input-group">
-              <input type="text" class="form-control" name="no_tel" >
+              <input type="text" required class="form-control" name="no_tel" >
             </div>
             </div>
 
@@ -184,7 +184,7 @@
           <div class="col-md-6">
             <label>No Telefon Pejabat</label> 
             <div class="input-group mb-4">
-              <input class="form-control" type="text" name="no_pejabat">
+              <input class="form-control" type="text" required name="no_pejabat">
             </div>
           </div>
 
@@ -204,14 +204,14 @@
                     <div class="mb-4">
                       <label>Nama Pemilik</label> <span class="required">*</span>
                       <div class="input-group">
-                        <input type="text" class="form-control" name="nama_pemilik" >
+                        <input type="text" class="form-control" name="nama_pemilik" required >
                       </div>
                     </div>
                   
                     <div class="mb-4">
                       <label>Kewarganegaraan</label> <span class="required">*</span>
                       <div class="input-group">
-                        <input type="text" class="form-control" name="kewarganegaraan" >
+                        <input type="text" class="form-control" name="kewarganegaraan" required>
                       </div>
                       </div>
   
@@ -219,14 +219,14 @@
                     <div class="mb-4">
                       <label>Jenis Pengenalan</label> <span class="required">*</span>
                       <div class="input-group">
-                        <input type="email" class="form-control" name="jenis_pengenalan" >
+                        <input type="email" class="form-control" name="jenis_pengenalan"  required>
                       </div>
                     </div>
 
                   <div class="mb-4">
                     <label>No Kad Pengenalan</label> <span class="required">*</span>
                     <div class="input-group">
-                      <input type="text" class="form-control" name="kad_pengenalan" >
+                      <input type="text" class="form-control" name="kad_pengenalan" required >
                     </div>
                     </div>
 
@@ -249,7 +249,7 @@
                     <div class="col-md-6">
                       <label>Nama Bank</label> <span class="required">*</span>
                       <div class="input-group mb-4">
-                        <select name="nama_bank" class="form-control">
+                        <select name="nama_bank" class="form-control" required>
                           <option hidden>Sila Pilih</option>
                           <option value=”ABNAMYK”>	THE ROYAL BANK OF SCOTLAND</option>
                           <option value=”AFBQMYKL”>ASIAN FINANCE BANK BHD</option>
@@ -328,7 +328,7 @@
                     <div class="col-md-6 ps-2">
                       <label>No Akaun</label> <span class="required">*</span>
                       <div class="input-group">
-                        <input type="text" class="form-control" name="no_akaun">
+                        <input type="text" class="form-control" name="no_akaun" required>
                       </div>
                     </div>
                   </div>

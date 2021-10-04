@@ -129,7 +129,7 @@ class PerancanganController extends Controller
         $perancangan->amaun=$request->amaun;
         $perancangan->pengesah=$request->pengesah;
         $perancangan->pelulus=$request->pelulus;
-        $perancangan->catatan_pengesah=$request->catatan_pengesah;;
+        $perancangan->catatan_pengesah=$request->catatan_pengesah;
         $perancangan->status=$request->status;
         // $perancangan->id=$request->perancangan_id;
 
@@ -173,7 +173,9 @@ class PerancanganController extends Controller
         $perancangan->amaun=$request->amaun;
         $perancangan->pengesah=$request->pengesah;
         $perancangan->pelulus=$request->pelulus;
-        $perancangan->catatan_pengesah=$request->catatan_pengesah;;
+        $perancangan->catatan_pengesah=$request->catatan_pengesah;
+        $perancangan->catatan_pelulus=$request->catatan_pelulus;
+
         $perancangan->status=$request->status;
         // $perancangan->id=$request->perancangan_id;
         
