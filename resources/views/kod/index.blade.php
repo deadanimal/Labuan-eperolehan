@@ -19,7 +19,6 @@
                   <th>Jenis Kod Bidang</th>
                   <th>Kategori Bidang</th>
                   <th>Pengkhususan Bidang</th>
-                  <th>Deskripsi Bidang</th>
                   <th>Tindakan</th>
                 </tr>
 
@@ -28,7 +27,6 @@
                   <td>{{$kod->jenis_kod}}</td>
                   <td>{{$kod->kategori_kod}}
                   <td>{{$kod->pengkhususan_kod}}</td>
-                  <td>{{$kod->deskripsi_kod}}</td>
                   <td><a href="/kod/{{$kod->id}}/edit"><img src="/edit_icon.png" width=15px;></td>
 
                 @endforeach

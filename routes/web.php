@@ -21,7 +21,7 @@ use App\Http\Controllers\KodController;
 
 
 
-Route::get('/dashboard', function () {
+Route::get('/', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 

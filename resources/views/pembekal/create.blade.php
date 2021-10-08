@@ -184,7 +184,7 @@
           <div class="col-md-6">
             <label>No Telefon Pejabat</label> 
             <div class="input-group mb-4">
-              <input class="form-control" type="text" required name="no_pejabat">
+              <input class="form-control" type="text" name="no_pejabat">
             </div>
           </div>
 
@@ -219,7 +219,7 @@
                     <div class="mb-4">
                       <label>Jenis Pengenalan</label> <span class="required">*</span>
                       <div class="input-group">
-                        <input type="email" class="form-control" name="jenis_pengenalan"  required>
+                        <input type="text" class="form-control" name="jenis_pengenalan"  required>
                       </div>
                     </div>
 

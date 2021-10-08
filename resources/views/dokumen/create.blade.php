@@ -62,6 +62,20 @@
                   <br><br>
                   
                   <div class="col-md-6 ps-md-2">
+                    <label>No Sijil MOF</label>
+                    <div class="input-group mb-2">
+                      <input class="form-control" type="text" name="no_sijil_mof" >
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 ps-md-2">
+                    <label>No Rujukan Pendaftaran</label>
+                    <div class="input-group mb-2">
+                      <input class="form-control" type="text" name="no_rujukan_pendaftaran" >
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 ps-md-2">
                     <label>Sijil dari pihak Kementerian Kewangan Malaysia</label>
                     <div class="input-group mb-2">
                       <input class="form-control" type="file" name="sijil_mof" >
@@ -71,21 +85,22 @@
                   <div class="col-md-6 ps-md-2">
                     <label>Sijil Perbendaharaan Malaysia Sabah</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="file" name="sijil_perbendaharaan" >
+                      <input class="form-control" type="file" name="sijil_mof" >
                     </div>
                   </div>
 
+
                   <div class="col-md-6 ps-md-2">
-                    <label>Sijil Bumiputera</label>
+                    <label>Sijil Perakuan Bumiputera</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="file" name="sijil_bumiputera" >
+                      <input class="form-control" type="file" name="sijil_perakuan_bumiputera" >
                     </div>
                   </div>
 
                   <div class="col-md-6 ps-md-2">
                     <label>Sijil Taraf Bumi</label>
                     <div class="input-group mb-2">
-                      <input class="form-control" type="file" name="sijil_taraf" >
+                      <input class="form-control" type="file" name="sijil_taraf_bumi" >
                     </div>
                   </div>
 

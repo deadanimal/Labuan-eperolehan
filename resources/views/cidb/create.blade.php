@@ -59,15 +59,45 @@
                 <fieldset>
                   <legend>Dokumen yang perlu dilampirkan:</legend>
                   <br><br>
-       
+
+                  <div class="col-md-6 ps-md-2">
+                    <label>Sijil Pendaftaran PPK</label>
+                    <div class="input-group mb-2">
+                      <input class="form-control" type="text" name="no_pendaftaran_ppk" required>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 ps-md-2">
+                    <label>Tarikh Sah Laku</label>
+                    <div class="input-group mb-2">
+                      <input class="form-control" type="date" name="tarikh_sah_laku" required>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-6 ps-md-2">
+                    <label>Pengkhususan</label>
+                    <div class="input-group mb-2">
+                      <input class="form-control" type="text" name="pengkhususan" required>
+                    </div>
+                  </div>
+
                   <div class="col-md-6 ps-md-2">
                     <label>Sijil Perakuan Pendaftaran Kontraktor</label>
                     <div class="input-group mb-2">
                       <input class="form-control" type="file" name="sijil_perakuan" required>
                     </div>
                   </div>
-                
-                  
+
+
+                  <div class="col-md-6 ps-md-2">
+                    <label>Pegawai Bertauliah</label>
+                    <div class="input-group mb-2">
+                      <input class="form-control" type="text" name="pegawai_bertauliah" required>
+                    </div>
+                  </div>
+
+
                   <div class="col-md-6 ps-md-2">
                     <label>Sijil Gred CIDB</label>
                     <div class="input-group mb-2">
@@ -87,14 +117,6 @@
                         
                       </select>
                     </div>
-
-                    <div class="col-md-6 ps-md-2">
-                      <label>Tarikh Sah Laku Sijil</label>
-                      <div class="input-group mb-2">
-                        <input class="form-control" type="date" name="tarikh_sah" required>
-                      </div>
-                    </div>
-
 
                 </fieldset>
                 <br><br><br>
