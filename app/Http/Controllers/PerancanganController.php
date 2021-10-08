@@ -121,7 +121,7 @@ class PerancanganController extends Controller
 
 
         $perancangan->tahun_pelan=$request->tahun_pelan;
-        $perancangan->tajuk_perolehan_perolehan=$request->tajuk_perolehan_perolehan;
+        $perancangan->tajuk_perolehan=$request->tajuk_perolehan;
         $perancangan->perihal=$request->perihal;
         $perancangan->kategori=$request->kategori;
         $perancangan->kaedah=$request->kaedah;
@@ -143,7 +143,7 @@ class PerancanganController extends Controller
     public function indexpelulus()
     {
     
-        $perancangan = Perancangan::where('status','Diluluskan')->get();
+        $perancangan = Perancangan::where('status','Menunggu Kelulusan')->get();
         return view('perancangan.indexpelulus', [
             'perancangan' => $perancangan
         ]);
@@ -189,13 +189,14 @@ class PerancanganController extends Controller
     {
         // dd($id);
         $perancangan= Perancangan::find($id);
+        $perancangan->status=$perancangan->status; 
         $perancangan->save();
 
         $pdf = PDF::loadView('pdf.cetakpelan', [
             'perancangan' => $perancangan]);
-            return $pdf->download($perancangan->tajuk_perolehan.'pdf');
+            return $pdf->download($perancangan->tajuk_perolehan.'.pdf');
     }
-
+    
 
     public function destroy(Perancangan $perancangan)
     {

@@ -19,6 +19,10 @@
   <link href="/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link id="pagestyle" href="/assets/css/soft-design-system.css?v=1.0.5" rel="stylesheet" />
+
+  <link href=https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src=https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js ></script>
   
   <style>
 

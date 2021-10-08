@@ -54,10 +54,9 @@
             </div>
               <form class="form-inline" method="POST" action="/perancangan"> 
                 @csrf
-                <br>
+
                 <fieldset>
                   <legend>Butiran Pelan</legend>
-                  <br><br>
                   
                 <div class="row">
                   <div class="col-md-3">
@@ -108,11 +107,8 @@
 
                     <label>Amaun Anggaran</label>
                     <input type="number"name="amaun" class="form-control" id="currency-field" pattern="^\RM\d{1,3}(,\d{3})*(\.\d+)?$" value="" data-type="currency" placeholder="0.00">
-
-
                 </fieldset>
-                <br><br><br>
-                
+                <br>
                 <fieldset>
                   <legend>Maklumat Pegawai</legend>
                   <br><br>
@@ -140,8 +136,7 @@
               
                   <a href="/perancangan" class="btn bg-gradient-light w-auto me-2">Kembali</a>
                   <button class="btn bg-gradient-info w-auto me-2" type="submit" name="status_pelan" value="draf">Draf</button> 
-                  <button class="btn bg-gradient-primary w-auto me-2" type="submit" name="status_pelan" value="hantar" >Hantar</button> 
-      
+                  <button class="btn bg-gradient-primary w-auto me-2" type="submit" name="status_pelan" value="hantar" style="float: right;" >Hantar</button> 
                   
                 </form>
                 
@@ -149,6 +144,15 @@
           </div>
          
         </div>
+<script>
+        $(document).ready(function() {
+          $('#example').DataTable( {
+              search: {
+                  return: true
+              }
+          } );
+      } );
+      </script>
 
       <script src="https://code.jquery.com/jquery-3.6.0.js">
      

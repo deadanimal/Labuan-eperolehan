@@ -18,6 +18,15 @@ use App\Http\Controllers\KodController;
 |
 */
 
+
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
 Route::resource('/perancangan',PerancanganController::class);
 Route::resource('/pembekal', PembekalController::class);
 Route::resource('/dokumen', DokumenController::class);
@@ -54,5 +63,3 @@ Route::get('/2', function () {
 Route::get('/3', function () {
     return view('pembekal.index');
 });
-
-
