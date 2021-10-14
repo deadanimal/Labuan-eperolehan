@@ -128,7 +128,7 @@
             <div class="col-md-6">
               <label>Poskod</label> <span class="required">*</span>
               <div class="input-group mb-4">
-                <input class="form-control" name="poskod" type="text" required>
+                <input class="form-control" name="poskod" type="number" required>
               </div>
             </div>
            
@@ -219,12 +219,16 @@
                     <div class="mb-4">
                       <label>Jenis Pengenalan</label> <span class="required">*</span>
                       <div class="input-group">
-                        <input type="text" class="form-control" name="jenis_pengenalan"  required>
+                        <select class="form-control" name="jenis_pengenalan"  required>
+                          <option hidden>Sila Pilih</option>
+                          <option value="Kad Pengenalan">Kad Pengenalan</option>
+                          <option value="pasport">Pasport</option>
+                        </select>
                       </div>
                     </div>
 
                   <div class="mb-4">
-                    <label>No Kad Pengenalan</label> <span class="required">*</span>
+                    <label>No Kad Pengenalan/ No Pasport</label> <span class="required">*</span>
                     <div class="input-group">
                       <input type="text" class="form-control" name="kad_pengenalan" required >
                     </div>

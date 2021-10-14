@@ -40,7 +40,7 @@
                             <tr>
 
                                 <td>{{ $perancangan->tahun_pelan }}</td>
-                                <td>{{ $perancangan->tajuk_perolehan }}</td>
+                                <td>{{$perancangan->tajuk_perolehan}}</td>
                                 <td>{{ $perancangan->kategori }}</td>
                                 <td>{{ $perancangan->status }}</td>
                                 <td>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Perancangan;
+use App\Mail\PerancanganPerolehan;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use \PDF;
 
@@ -50,6 +52,7 @@ class PerancanganController extends Controller
        
         if ($request->status_pelan=="hantar"){
             $perancangan->status="Menunggu Pengesahan";
+            Mail::to('syafiza.senin@pipeline.com.my')->send(new PerancanganPerolehan);
         }
         else if($request->status_pelan=="draf"){
             $perancangan->status="Draf";
@@ -57,7 +60,7 @@ class PerancanganController extends Controller
         }
 
         $perancangan->save();
-        $message="Pelan Perancangan Telah Berjaya Dihantar. Sila tunggu Pengawai Pengesah untuk Mengesahkan pelan yang dihantar. ";
+
         return redirect('/perancangan');
 
         

@@ -2,6 +2,8 @@
 
 @section('content')
 
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src=https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js></script>
 
   <h3>Senarai Perolehan</h3>  
   <br><br>
@@ -15,27 +17,30 @@
               </div>
               <br><br>
              
-              <table width="50%" class="table table-striped">
-                
-                <tr>
-                  <th>Tahun Perolehan</th>
-                  <th>Nama Perolehan</th>
-                  <th>Kategori Perolehan</th>
-                  <th>Status</th>
-                  <th>Tindakan</th>
-                </tr>
+              <table id="example-table1" class="order-column" style="width:100%">
 
-                @foreach($perancangan as $perancangan)
-                <tr>
-                  <td>{{$perancangan->tahun_pelan}}</td>
-                  <td>{{$perancangan->tajuk}}</td>
-                  <td>{{$perancangan->kategori}}</td>
-                  <td>{{$perancangan->status}}</td>
-                  <td><a href="/editpelulus/{{$perancangan->id}}"><img src="/edit_icon.png" width=15px;></a></td>
+                <thead>
+                    <tr>
+                        <th>Tahun Perolehan</th>
+                        <th>Nama Perolehan</th>
+                        <th>Kategori Perolehan</th>
+                        <th>Status</th>
+                        <th>Tindakan</th>
+                    </tr>
+                </thead>
 
+                <tbody>
+                  @foreach ($perancangan as $perancangan)
+                      <tr>
+                            <td>{{$perancangan->tahun_pelan}}</td>
+                            <td>{{$perancangan->tajuk_perolehan}}</td>
+                            <td>{{$perancangan->kategori}}</td>
+                            <td>{{$perancangan->status}}</td>
+                  <td>
+                    <a href="/editpelulus/{{$perancangan->id}}"><img src="/edit_icon.png" width=15px;></a></td>
                   @endforeach
               </tr>
-
+                </tbody>
               </table>
 
           
@@ -47,6 +52,17 @@
             </div>
           </div>
         </div>
+
+        <script>
+                  $(document).ready(function() {
+            $('#example-table1').DataTable({
+                "order": [
+                    [3, "desc"]
+                ]
+            });
+        });
+    </script>
+    
 @stop
 
 
